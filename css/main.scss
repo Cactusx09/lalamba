@@ -831,17 +831,38 @@ b{
 		}
 	}
 	&__panel{
-		padding: 30px;
+		padding: 30px 20px;
+		border-top: 1px solid  rgba(255, 255, 255, 0.1);
 		a{
 			@extend ._flex_fs_c;
-			svg{
-				margin-right: 15px;
+			&:not(:last-of-type){
+				margin-bottom: 25px;
+			}
+			i{
+				min-width: 35px;
+				text-align: center;
+				margin-right: 9px;
 			}
 			span{
 				font-size: 0.88em;
 				color: rgba(255, 255, 255, 0.48);
 				font-weight: 700;
 			}
+			&:hover{
+				.a{
+					fill: #fff;
+				}
+				g{
+					opacity: 1;
+				}
+				span{
+					color: #fff;
+				}
+			}
+		}
+		.NFI-wrapper{
+			margin-bottom: 25px;
+			width: 206px;
 		}
 	}
 }
@@ -1252,29 +1273,30 @@ b{
 	position: relative;
 	z-index: 5;
 	flex-grow: 2;
-	line-height: 40px;
+	line-height: 42px;
 	color: #fff;
 	width: 177px;
 	height: 40px;
-  border-radius: 3px;
+    border-radius: 3px;
 	text-transform: uppercase;
 	background-color: $r;
+	font-size: 14px;
 	font-weight: 700;
     transition: background $t;
 	&:before{
 		content: '';
 		position: absolute;
 		background-image: url('../images/ico/upload.svg');
-		width: 17px;
-		height: 22px;
-		top: 14px;
-		left: 22px;
-		transition: $t/2;
+		width: 15px;
+		height: 24px;
+		background-repeat: no-repeat;
+		top: 12px;
+		left: 10px;
+		transition: $t;
 	}
 	span{
 		display: inline-block;
-		transition: $t/2;
-		margin-left: 16px;
+		transition: $t/1.5;
 	}
 	&:after{
 		content: '';
@@ -1295,7 +1317,7 @@ b{
 			left: 14px;
 		}
 		&:after{
-			margin-left: -30px;
+			margin-left: -37px;
 		}
 		span{
 			transform: translateX(15px);
