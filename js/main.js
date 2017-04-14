@@ -3,6 +3,7 @@ $(document).ready(function(){
 		var hamb = $(this),
 			wrap = $('.main_wrp'),
 			menu = $('.menu'),
+			playlist = $('.playlist'),
 			width = menu.outerWidth(),
 			a = $('.menu__tabs').offset().top,
 			b = $('.menu__bot').offset().top,
@@ -12,6 +13,7 @@ $(document).ready(function(){
 		if(!hamb.hasClass('_close')){
 			wrap.css('transform','translateX('+width+'px)');
 		}else{
+			playlist.removeClass('_active');
 			wrap.css('transform','none');
 		}
 		hamb.toggleClass('_close');
@@ -198,6 +200,25 @@ $(document).ready(function(){
 		});
 		$('.NFI-button').wrapInner('<span></span>');
 	}
+
+	//playlist open
+	$('.menu__panel_playlist').click(function(){
+		$('.playlist').addClass('_active');
+		$('.playlist__table_wrp').perfectScrollbar();
+	});
+	//playlist sorting
+	$('.playlist__table').tablesorter({
+		cssHeader: 'table_header'
+	});
+	//playlist tabs
+	$('.playlist__head a').click(function(){
+		$(this).addClass('_current').siblings().removeClass('_current');
+	});
+	//playlist remove track
+	$('.playlist__table td:last-of-type').click(function(){
+		var tr = $(this).closest('tr');
+		tr.fadeOut(500);
+	});
 });
 //var path = document.getElementsByClassName('.g_wrp').getAttribute("style");
 //
