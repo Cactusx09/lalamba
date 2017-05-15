@@ -111,6 +111,8 @@ $(document).ready(function(){
 		$('.popup.popup_'+name+', .overlay').addClass('_visible');
 	});
 
+
+
 	//report textarea
 	var flag = false;
 	$('.popup_report__options .g_radio').change(function(){
@@ -317,19 +319,23 @@ $(document).ready(function(){
 		var n = 0;
 		tr.fadeOut(300);
 		//script for table numeration update (craching when table already sort)
-		setTimeout(function(){
-			tr.remove();
-			numbers.each(function(){
-				var el = $(this),
-					tr_index = $(this).closest('tr').index();
-				n++;
-				if(tr_index>tr_n){
-					el.text(n-1+'.');
-				}else{
-					el.text(n+'.');
-				}
-			});
-		},300);
+
+
+//		setTimeout(function(){
+//			tr.remove();
+//			numbers.each(function(){
+//				var el = $(this),
+//					tr_index = $(this).closest('tr').index();
+//				n++;
+//				if(tr_index>tr_n){
+//					el.text(n-1+'.');
+//				}else{
+//					el.text(n+'.');
+//				}
+//			});
+//		},300);
+
+
 	});
 });
 //var path = document.getElementsByClassName('.g_wrp').getAttribute("style");

@@ -948,9 +948,10 @@ b{
 		border-top: 1px solid  rgba(255, 255, 255, 0.1);
 		a{
 			@extend ._flex_fs_c;
-			&:not(:last-of-type){
-				margin-bottom: 25px;
-			}
+			margin-bottom: 25px;
+//			&:not(:last-of-type){
+//				margin-bottom: 25px;
+//			}
 			i{
 				min-width: 35px;
 				text-align: center;
@@ -1647,6 +1648,49 @@ b{
 			}
 		}
 	}
+	&_message{
+		width: 360px;
+		text-align: center;
+		padding: 25px;
+		background: rgba(255, 255, 255, 0.86);
+		top: inherit;
+		left: inherit;
+		right: 3%;
+		bottom: 3%;
+		&._visible{
+			.popup_message__txt{
+				@for $n from 2 through 10{
+					:not(.ps-scrollbar-y):nth-child(#{$n}){
+						animation: down $t*$n*0.8;
+					}
+				}
+			}
+		}
+		&__txt{
+			max-height: 525px;
+			position: relative;
+			h4{
+				font-size: 0.96em;
+				color: #485465;
+				font-weight: 700;
+				margin-bottom: 5px;
+			}
+			span{
+				color: $g;
+			}
+			b{
+				color: $r;
+			}
+		}
+		._close_pop{
+			position: absolute;
+			top: 0;
+			right: -27px;
+			color: #fff;
+			font-weight: 400;
+			opacity: 1;
+		}
+	}
 	&_like{
 		max-width: 300px;
 		padding-bottom: 15px;
@@ -1794,8 +1838,6 @@ b{
 		}
 	}
 }
-
-
 progress[value] {
   	/* Reset the default appearance */
   	-webkit-appearance: none;
@@ -1893,8 +1935,8 @@ progress[value]::-webkit-progress-value {
 	}
 }
 .NFI-button {
-    background-color: transparent;
-    margin-top: 0;
+   background-color: transparent;
+   margin-top: 0;
 	position: relative;
 	z-index: 5;
 	flex-grow: 2;
@@ -1904,10 +1946,10 @@ progress[value]::-webkit-progress-value {
 	height: 40px;
     border-radius: 3px;
 	text-transform: uppercase;
-	background-color: $r;
+	background-color: $g;
 	font-size: 14px;
 	font-weight: 700;
-    transition: background $t;
+   transition: background $t;
 	&:before{
 		content: '';
 		position: absolute;
@@ -1928,7 +1970,7 @@ progress[value]::-webkit-progress-value {
 		height: 70px;
 		width: 70px;
 		transform: rotate(45deg);
-		background-color: $g;
+		background-color: $r;
 		position: absolute;
 		left: 0;
 		margin-left: -84px;
