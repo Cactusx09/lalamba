@@ -47,6 +47,26 @@ $(document).ready(function(){
 		});
 		$('.popup.popup_'+name+', .overlay').addClass('_visible');
 	});
+	//popup tabs
+	$('.popup_user__head_item').click(function(){
+		var el = $(this),
+			n = el.index(),
+			wrap = el.closest('.popup').find('.popup_user__tab').eq(n);
+		el.addClass('_current').siblings().removeClass('_current');
+		wrap.addClass('_current').siblings().removeClass('_current');
+		//recalculate
+		var name = 'user',
+			popup = $('.popup_'+name),
+			popup_h = popup.outerHeight(),
+			popup_w = popup.outerWidth(),
+			h = $(window).height(),
+			px = window.pageYOffset + h/2 - popup_h/2;
+		popup.css({
+			'top': px+'px',
+			'margin-left': '-'+ popup_w/2 +'px'
+		});
+		$('.popup.popup_'+name+', .overlay').addClass('_visible');
+	});
 
 	//popups
 	$('._open_pop').click(function(e){
@@ -68,13 +88,66 @@ $(document).ready(function(){
 		$('.popup, .overlay').removeClass('_visible');
 	});
 
-	//report textarea
-	$('.popup_report__options .g_radio').change(function(){
-		if($(this).val() == 'other'){
-			$(this).nextAll('._textarea').addClass('_visible');
+	//popup login artist/listener fields change
+	$('.popup_login__options .g_radio').change(function(){
+		var el = $(this),
+			fields = el.closest('.popup_login__tab').find('.popup_login__options_artist');
+		if(el.val() == 'artist'){
+			fields.addClass('_visible');
 		}else{
-			$(this).nextAll('._textarea').removeClass('_visible');
+			fields.removeClass('_visible');
 		}
+		//recalculate
+		var name = 'login',
+			popup = $('.popup_'+name),
+			popup_h = popup.outerHeight(),
+			popup_w = popup.outerWidth(),
+			h = $(window).height(),
+			px = window.pageYOffset + h/2 - popup_h/2;
+		popup.css({
+			'top': px+'px',
+			'margin-left': '-'+ popup_w/2 +'px'
+		});
+		$('.popup.popup_'+name+', .overlay').addClass('_visible');
+	});
+
+	//report textarea
+	var flag = false;
+	$('.popup_report__options .g_radio').change(function(){
+		var el = $(this),
+			textarea = el.nextAll('._textarea');
+		if(el.val() == 'other' && !flag){
+			textarea.addClass('_visible');
+			flag = true;
+			//recalculate
+			var name = 'report',
+				popup = $('.popup_'+name),
+				popup_h = popup.outerHeight(),
+				popup_w = popup.outerWidth(),
+				h = $(window).height(),
+				px = window.pageYOffset + h/2 - popup_h/2;
+			popup.css({
+				'top': px+'px',
+				'margin-left': '-'+ popup_w/2 +'px'
+			});
+			$('.popup.popup_'+name+', .overlay').addClass('_visible');
+		}else if(el.val() == 'other' && flag){
+			textarea.removeClass('_visible');
+			flag = false;
+		}
+
+	});
+
+
+	//table numbers
+
+	$('tbody').each(function(){
+		var n = 0;
+		$(this).find('.t_number').each(function(){
+			var el = $(this);
+			n++;
+			el.html('<span>'+n+'.</span><i class="play-button paused"><span class="left"></span><span class="right"></span><span class="triangle-1"></span><span class="triangle-2"></span></i>');
+		});
 	});
 
 	//range slider
@@ -90,6 +163,14 @@ $(document).ready(function(){
 			});
 		});
 	}
+
+	//mask
+	$('input[name="birthday"]').inputmask({
+		alias: "date",
+		"clearIncomplete": true,
+		"showMaskOnHover": false
+	});
+
 	//custom scroll
 	$('._scroll').perfectScrollbar();
 	//menu tabs
@@ -173,37 +254,51 @@ $(document).ready(function(){
 
 	//file input
 	if($('input[type=file]').length){
-		var text = $("input[type=file]").attr('data-text');
-		$("input[type=file]").nicefileinput({
-			label : 'Upload my track'
+
+		$("input[type=file]").each(function(){
+			var el = $(this),
+				text = el.data('text');
+			el.nicefileinput({
+				label : text
+			});
 		});
-		$(".NFI-filename").val(text);
-		$("input[type=file]").on('change',function(){
-			$(".NFI-button").addClass('hide-for-pre');
-			$(".NFI-filename").addClass('_active');
-			$('#close-input').show();
-			if($(".NFI-filename").val()==""){
-				$(".NFI-filename").val(text).removeClass('_active');
-				$(".NFI-button").removeClass('hide-for-pre');
-				$('#close-input').hide();
-			}
-			setTimeout(function(){
-				$('#close-input').addClass('big');
-			},1000);
-		});
-		$('.NFI-wrapper').append('<div id="close-input"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path d="M18 1.4L16.6 0 9 7.6 1.4 0 0 1.4 7.6 9 0 16.6 1.4 18 9 10.4 16.6 18 18 16.6 10.4 9 18 1.4Z" fill="rgb(204, 204, 204)"/></svg></div>');
-		$('#close-input').click(function(){
-			$(this).hide();
-			$(".NFI-filename").val(text).removeClass('_active');
-			$('.NFI-current').trigger("click");
-			$(".NFI-button").removeClass('hide-for-pre');
-		});
-		$('.NFI-button').wrapInner('<span></span>');
 	}
+
+	//play/pause animation
+	$(".play_event").click(function() {
+		$(this).toggleClass("paused").find('.play-button').toggleClass("paused");
+		$('.s_text__info_ico').toggleClass('paused');
+	});
+	$(".t_number").click(function() {
+		var el = $(this),
+			tr = el.closest('tr');
+		el.find('.play-button').toggleClass("paused");
+		tr.siblings().find('.play-button').addClass('paused');
+		tr.toggleClass('_active').siblings().removeClass('_active');
+	});
+
+	//rating open
+	$('.s_text__info_num').click(function(){
+		$('.rating').addClass('_active');
+		$('.rating__table_wrp').perfectScrollbar();
+	});
+	//rating sorting
+	$('.rating__table').tablesorter({
+		cssHeader: 'table_header'
+	});
+	//rating tabs
+	$('.rating__head a').click(function(){
+		$(this).addClass('_current').siblings().removeClass('_current');
+	});
+	//rating close
+	$('.rating__close').click(function(){
+		$('.rating').removeClass('_active');
+	});
 
 	//playlist open
 	$('.menu__panel_playlist').click(function(){
 		$('.playlist').addClass('_active');
+		$('.rating').removeClass('_active');
 		$('.playlist__table_wrp').perfectScrollbar();
 	});
 	//playlist sorting
@@ -215,9 +310,26 @@ $(document).ready(function(){
 		$(this).addClass('_current').siblings().removeClass('_current');
 	});
 	//playlist remove track
-	$('.playlist__table td:last-of-type').click(function(){
-		var tr = $(this).closest('tr');
-		tr.fadeOut(500);
+	$('.playlist__table .t_del').click(function(){
+		var tr = $(this).closest('tr'),
+			numbers = tr.closest('table').find('tbody .t_number'),
+			tr_n = tr.index()-1;
+		var n = 0;
+		tr.fadeOut(300);
+		//script for table numeration update (craching when table already sort)
+		setTimeout(function(){
+			tr.remove();
+			numbers.each(function(){
+				var el = $(this),
+					tr_index = $(this).closest('tr').index();
+				n++;
+				if(tr_index>tr_n){
+					el.text(n-1+'.');
+				}else{
+					el.text(n+'.');
+				}
+			});
+		},300);
 	});
 });
 //var path = document.getElementsByClassName('.g_wrp').getAttribute("style");
