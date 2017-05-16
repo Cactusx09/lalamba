@@ -334,9 +334,13 @@ $(document).ready(function(){
 //				}
 //			});
 //		},300);
-
-
 	});
+
+	//pop_message
+	setTimeout(function(){
+		$('.popup_message[data-name="alert3"]').addClass('_visible');
+	},2000);
+
 });
 //var path = document.getElementsByClassName('.g_wrp').getAttribute("style");
 //
