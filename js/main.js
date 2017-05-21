@@ -337,10 +337,19 @@ $(document).ready(function(){
 	});
 
 	//pop_message
-	setTimeout(function(){
-		$('.popup_message[data-name="alert3"]').addClass('_visible');
-	},2000);
+//	setTimeout(function(){
+//		$('.popup_message[data-name="alert3"]').addClass('_visible');
+//	},2000);
 
+	//mobile
+	$('.playlist__btn').click(function(){
+		$('.playlist').removeClass('_active');
+	});
+
+	$('.rating__filter').click(function(){
+		$('.rating').toggleClass('_trans');
+		$('.rating__table_wrp').perfectScrollbar('update');
+	});
 });
 //var path = document.getElementsByClassName('.g_wrp').getAttribute("style");
 //
