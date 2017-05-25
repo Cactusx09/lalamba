@@ -2,6 +2,7 @@ $(document).ready(function(){
 	$('.header__hamb').click(function(){
 		var hamb = $(this),
 			wrap = $('.main_wrp'),
+			btns = $('.s_btns'),
 			menu = $('.menu'),
 			playlist = $('.playlist'),
 			width = menu.outerWidth(),
@@ -12,9 +13,11 @@ $(document).ready(function(){
 		$('._scroll').perfectScrollbar('update');
 		if(!hamb.hasClass('_close')){
 			wrap.css('transform','translateX('+width+'px)');
+			btns.css('transform','translateX(-'+width+'px)');
 		}else{
 			playlist.removeClass('_active');
 			wrap.css('transform','none');
+			btns.css('transform','none');
 		}
 		hamb.toggleClass('_close');
 		menu.toggleClass('_active');
@@ -111,6 +114,11 @@ $(document).ready(function(){
 		$('.popup.popup_'+name+', .overlay').addClass('_visible');
 	});
 
+	//datepicker
+	if($('input[name="birthday"]').length){
+		$('input[name="birthday"]').dateDropper();
+	}
+
 	//report textarea
 	var flag = false;
 	$('.popup_report__options .g_radio').change(function(){
@@ -163,13 +171,6 @@ $(document).ready(function(){
 			});
 		});
 	}
-
-	//mask
-	$('input[name="birthday"]').inputmask({
-		alias: "date",
-		"clearIncomplete": true,
-		"showMaskOnHover": false
-	});
 
 	//custom scroll
 	$('._scroll').perfectScrollbar();
@@ -317,19 +318,36 @@ $(document).ready(function(){
 		var n = 0;
 		tr.fadeOut(300);
 		//script for table numeration update (craching when table already sort)
-		setTimeout(function(){
-			tr.remove();
-			numbers.each(function(){
-				var el = $(this),
-					tr_index = $(this).closest('tr').index();
-				n++;
-				if(tr_index>tr_n){
-					el.text(n-1+'.');
-				}else{
-					el.text(n+'.');
-				}
-			});
-		},300);
+
+
+//		setTimeout(function(){
+//			tr.remove();
+//			numbers.each(function(){
+//				var el = $(this),
+//					tr_index = $(this).closest('tr').index();
+//				n++;
+//				if(tr_index>tr_n){
+//					el.text(n-1+'.');
+//				}else{
+//					el.text(n+'.');
+//				}
+//			});
+//		},300);
+	});
+
+	//pop_message
+//	setTimeout(function(){
+//		$('.popup_message[data-name="alert3"]').addClass('_visible');
+//	},2000);
+
+	//mobile
+	$('.playlist__btn').click(function(){
+		$('.playlist').removeClass('_active');
+	});
+
+	$('.rating__filter').click(function(){
+		$('.rating').toggleClass('_trans');
+		$('.rating__table_wrp').perfectScrollbar('update');
 	});
 });
 //var path = document.getElementsByClassName('.g_wrp').getAttribute("style");

@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="vendor/rangeSlider/rangeslider.css">
         <link rel="stylesheet" href="vendor/perfect-scrollbar/css/perfect-scrollbar.min.css">
-
+		<link rel="stylesheet" href="vendor/datedropper/datedropper.min.css">
         <script src="vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
@@ -171,7 +171,7 @@
 					<div class="menu__panel">
 						<a href="#" class="menu__panel_playlist"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20"><style>.a{fill:rgba(255, 255, 255, 0.48);}</style><path d="M477.6 128.1C443.4 68.9 388.3 26.5 322.2 8.8 256.2-8.9 187.3 0.2 128.1 34.4 68.9 68.6 26.5 123.8 8.8 189.8c-17.7 66-8.6 135 25.6 194.2C68.6 443.1 123.8 485.5 189.8 503.2c22 5.9 44.4 8.8 66.6 8.8 44.3 0 88.1-11.6 127.5-34.4 59.2-34.2 101.5-89.4 119.2-155.4C520.9 256.2 511.8 187.2 477.6 128.1zM477.4 315.3c-15.8 59.1-53.8 108.6-106.8 139.2 -53 30.6-114.8 38.7-174 22.9 -59.1-15.8-108.6-53.8-139.2-106.8 -30.6-53-38.7-114.8-22.9-174C50.4 137.5 88.4 88.1 141.4 57.5c35.3-20.4 74.5-30.8 114.2-30.8 19.9 0 40 2.6 59.7 7.9 59.1 15.8 108.6 53.8 139.2 106.8C485.1 194.4 493.3 256.2 477.4 315.3z" class="a"/><path d="M378.8 231.9l-164.5-95c-8.7-5-19.2-5-27.9 0 -8.7 5-13.9 14.1-13.9 24.2v190c0 10.1 5.2 19.1 13.9 24.2 4.4 2.5 9.2 3.8 13.9 3.8 4.8 0 9.6-1.3 13.9-3.8l164.5-95c8.7-5 13.9-14.1 13.9-24.2C392.7 245.9 387.5 236.9 378.8 231.9zM365.5 257.1l-164.5 95c-0.2 0.1-0.6 0.4-1.2 0 -0.6-0.4-0.6-0.8-0.6-1.1v-190c0-0.2 0-0.7 0.6-1.1 0.2-0.1 0.5-0.2 0.6-0.2 0.3 0 0.5 0.1 0.6 0.2l164.5 95c0.2 0.1 0.6 0.4 0.6 1.1C366.1 256.7 365.7 257 365.5 257.1z" class="a"/><path d="M413.3 134.4c-31.7-40.9-79.3-68.4-130.7-75.5 -7.3-1-14 4.1-15 11.4 -1 7.3 4.1 14 11.4 15 44.5 6.1 85.8 29.9 113.2 65.4 2.6 3.4 6.6 5.2 10.5 5.2 2.8 0 5.7-0.9 8.1-2.8C416.7 148.6 417.8 140.3 413.3 134.4z" class="a"/></svg></i><span>My Playlist</span></a>
 						<input name="upload" type="file" data-text="Upload My Track">
-						<a href="#"><i><svg width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><g stroke="#FFF" fill="none" fill-rule="evenodd" opacity=".5"><ellipse cx="8.5" cy="5.2" rx="4.5" ry="4.447"/><path d="M16.241 12.824A10.96 10.96 0 0 0 8.5 9.647a10.96 10.96 0 0 0-7.741 3.177A10.96 10.96 0 0 0 8.5 16a10.96 10.96 0 0 0 7.741-3.176z"/></g></svg></i><span>My Profile</span></a>
+<!--						<a href="#"><i><svg width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><g stroke="#FFF" fill="none" fill-rule="evenodd" opacity=".5"><ellipse cx="8.5" cy="5.2" rx="4.5" ry="4.447"/><path d="M16.241 12.824A10.96 10.96 0 0 0 8.5 9.647a10.96 10.96 0 0 0-7.741 3.177A10.96 10.96 0 0 0 8.5 16a10.96 10.96 0 0 0 7.741-3.176z"/></g></svg></i><span>My Profile</span></a>-->
 <!--						<a href="#"><i><svg width="14" height="16" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg"><g fill="#FFF" fill-rule="evenodd" opacity=".5"><path d="M6.748 14.373H2.81a1.95 1.95 0 0 1-1.938-1.957V2.83A1.95 1.95 0 0 1 2.81.874h4.002c.24 0 .432-.194.432-.437A.433.433 0 0 0 6.812 0H2.81C1.263 0 .007 1.272.007 2.831v9.585c0 1.562 1.26 2.83 2.803 2.83h3.938c.24 0 .432-.193.432-.436a.435.435 0 0 0-.432-.437z"/><path d="M13.872 7.316L11.124 4.54a.428.428 0 0 0-.612 0 .439.439 0 0 0 0 .618l2.012 2.032H3.749a.433.433 0 0 0-.433.437c0 .242.193.436.433.436h8.775l-2.012 2.033a.439.439 0 0 0 .304.747.42.42 0 0 0 .305-.13l2.748-2.776a.44.44 0 0 0 .003-.621z"/></g></svg></i><span>Logout</span></a>-->
 					</div>
 <!--
@@ -197,7 +197,10 @@
 			<div class="playlist">
 				<div class="playlist__head">
 					<a href="#" class="_current">Playlist</a>
-					<a href="#">My uploaded tracks</a>
+					<a href="#"><span>My</span> uploaded <span>tracks</span></a>
+					<div class="playlist__btn">
+						<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 512 512"><path d="M48 96h416c8.8 0 16-7.2 16-16s-7.2-16-16-16h-416c-8.8 0-16 7.2-16 16S39.2 96 48 96" fill="#75d0a4"/><path d="M464 16V0h-416c-4.2 0-8.3 1.7-11.3 4.7C33.7 7.7 32 11.8 32 16v64c0 4.2 1.7 8.3 4.7 11.3l155.3 155.3V400c0 4.2 1.7 8.3 4.7 11.3l96 96c4.6 4.6 11.5 6 17.4 3.5 6-2.5 9.9-8.3 9.9-14.8V368 246.6L475.3 91.3c3-3 4.7-7.1 4.7-11.3V16c0-4.2-1.7-8.3-4.7-11.3C472.3 1.7 468.2 0 464 0V16h-16v57.4L292.7 228.7c-3 3-4.7 7.1-4.7 11.3v128 89.4l-64-64V240c0-4.2-1.7-8.3-4.7-11.3L64 73.4V32h400V16h-16H464z" fill="#fff"/></svg>
+					</div>
 				</div>
 				<div class="playlist__table_wrp _scroll">
 					<table class="playlist__table">
@@ -467,6 +470,9 @@
 				</div>
 			</div>
 			<div class="rating">
+				<div class="rating__filter">
+					<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 512 512"><path d="M48 96h416c8.8 0 16-7.2 16-16s-7.2-16-16-16h-416c-8.8 0-16 7.2-16 16S39.2 96 48 96" fill="#75d0a4"></path><path d="M464 16V0h-416c-4.2 0-8.3 1.7-11.3 4.7C33.7 7.7 32 11.8 32 16v64c0 4.2 1.7 8.3 4.7 11.3l155.3 155.3V400c0 4.2 1.7 8.3 4.7 11.3l96 96c4.6 4.6 11.5 6 17.4 3.5 6-2.5 9.9-8.3 9.9-14.8V368 246.6L475.3 91.3c3-3 4.7-7.1 4.7-11.3V16c0-4.2-1.7-8.3-4.7-11.3C472.3 1.7 468.2 0 464 0V16h-16v57.4L292.7 228.7c-3 3-4.7 7.1-4.7 11.3v128 89.4l-64-64V240c0-4.2-1.7-8.3-4.7-11.3L64 73.4V32h400V16h-16H464z" fill="#fff"></path></svg>
+				</div>
 				<div class="rating__head_wrp">
 					<div class="rating__head">
 						<a href="#" class="_current">Current</a>
@@ -492,7 +498,6 @@
 								<th class="t_artist"><span>Artist</span></th>
 								<th class="t_genre"><span>Genre</span></th>
 								<th class="t_rank"><span>Rank</span></th>
-								<th class="t_del"><svg width="19" height="17" viewBox="0 0 19 17" xmlns="http://www.w3.org/2000/svg"><g fill="#FFF" fill-rule="evenodd"><path d="M18.424 14.68h-2.8c-3.443 0-5.243-3.352-6.832-6.31-1.377-2.562-2.676-4.982-4.746-4.982H.542A.547.547 0 0 1 0 2.837c0-.305.243-.553.542-.553h3.504c2.712 0 4.229 2.825 5.696 5.557 1.515 2.82 3.082 5.736 5.883 5.736h2.8c.299 0 .541.247.541.551a.547.547 0 0 1-.542.552zM11.249 6.074a.536.536 0 0 1-.322-.108.558.558 0 0 1-.114-.772c1.441-1.985 2.97-2.909 4.811-2.909h2.8c.3 0 .542.247.542.552a.547.547 0 0 1-.542.552h-2.8c-1.487 0-2.702.759-3.939 2.461a.539.539 0 0 1-.436.224zM4.046 14.68H.542A.547.547 0 0 1 0 14.13c0-.305.243-.552.542-.552h3.504c1.174 0 2.19-.752 3.29-2.438a.536.536 0 0 1 .752-.155c.25.17.317.512.152.766-.892 1.363-2.174 2.93-4.194 2.93z"/><path d="M16.623 5.222a.534.534 0 0 1-.383-.162.558.558 0 0 1 0-.78l1.418-1.443-1.418-1.444a.558.558 0 0 1 0-.78.533.533 0 0 1 .766 0l1.801 1.834a.558.558 0 0 1 0 .78l-1.8 1.833a.531.531 0 0 1-.384.162zM16.623 16.515a.536.536 0 0 1-.383-.162.559.559 0 0 1 0-.78l1.418-1.444-1.418-1.443a.559.559 0 0 1 0-.78.535.535 0 0 1 .766 0l1.801 1.832a.557.557 0 0 1 0 .78l-1.8 1.835a.536.536 0 0 1-.384.162z"/></g></svg></th>
 							</tr>
 						</thead>
 						<tbody class="playlist__table_wrp _scroll">
@@ -503,9 +508,6 @@
 								<td class="t_artist">Big Scary</td>
 								<td class="t_genre">Pop</td>
 								<td class="t_rank"><small>85</small><progress value="85" max="100"><div class="progress_bar"><span style="width: 85%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>2.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -514,9 +516,6 @@
 								<td class="t_artist">Flying Ibex</td>
 								<td class="t_genre">Pop</td>
 								<td class="t_rank"><small>60</small><progress value="60" max="100"><div class="progress_bar"><span style="width: 60%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>3.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -525,9 +524,6 @@
 								<td class="t_artist">Michael Buble</td>
 								<td class="t_genre">Indi Rock</td>
 								<td class="t_rank"><small>99</small><progress value="99" max="100"><div class="progress_bar"><span style="width: 99%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>4.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -536,9 +532,6 @@
 								<td class="t_artist">Tik Tu</td>
 								<td class="t_genre">Garage Rock</td>
 								<td class="t_rank"><small>43</small><progress value="43" max="100"><div class="progress_bar"><span style="width: 43%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>5.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -547,9 +540,6 @@
 								<td class="t_artist">lorem1</td>
 								<td class="t_genre">Pop</td>
 								<td class="t_rank"><small>15</small><progress value="15" max="100"><div class="progress_bar"><span style="width: 15%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>6.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -558,9 +548,6 @@
 								<td class="t_artist">lorem1</td>
 								<td class="t_genre">Pop</td>
 								<td class="t_rank"><small>39</small><progress value="39" max="100"><div class="progress_bar"><span style="width: 39%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>7.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -569,9 +556,6 @@
 								<td class="t_artist">lorem1</td>
 								<td class="t_genre">Pop</td>
 								<td class="t_rank"><small>53</small><progress value="53" max="100"><div class="progress_bar"><span style="width: 53%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>8.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -580,9 +564,6 @@
 								<td class="t_artist">lorem1</td>
 								<td class="t_genre">Pop</td>
 								<td class="t_rank"><small>12</small><progress value="12" max="100"><div class="progress_bar"><span style="width: 12%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>9.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -591,9 +572,6 @@
 								<td class="t_artist">London Grammar</td>
 								<td class="t_genre">Trance</td>
 								<td class="t_rank"><small>67</small><progress value="67" max="100"><div class="progress_bar"><span style="width: 67%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>10.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -602,9 +580,6 @@
 								<td class="t_artist">lorem1</td>
 								<td class="t_genre">Doom</td>
 								<td class="t_rank"><small>23</small><progress value="23" max="100"><div class="progress_bar"><span style="width: 23%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>11.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -613,9 +588,6 @@
 								<td class="t_artist">lorem1</td>
 								<td class="t_genre">Pop</td>
 								<td class="t_rank"><small>38</small><progress value="38" max="100"><div class="progress_bar"><span style="width: 38%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>12.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -624,9 +596,6 @@
 								<td class="t_artist">lorem1</td>
 								<td class="t_genre">Pop</td>
 								<td class="t_rank"><small>92</small><progress value="92" max="100"><div class="progress_bar"><span style="width: 92%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>13.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -635,9 +604,6 @@
 								<td class="t_artist">lorem1</td>
 								<td class="t_genre">Pop</td>
 								<td class="t_rank"><small>68</small><progress value="68" max="100"><div class="progress_bar"><span style="width: 68%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>14.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -646,9 +612,6 @@
 								<td class="t_artist">lorem1</td>
 								<td class="t_genre">Pop</td>
 								<td class="t_rank"><small>37</small><progress value="37" max="100"><div class="progress_bar"><span style="width: 37%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>15.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -657,9 +620,6 @@
 								<td class="t_artist">lorem1</td>
 								<td class="t_genre">Pop</td>
 								<td class="t_rank"><small>68</small><progress value="68" max="100"><div class="progress_bar"><span style="width: 68%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>16.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -668,9 +628,6 @@
 								<td class="t_artist">lorem1</td>
 								<td class="t_genre">Pop</td>
 								<td class="t_rank"><small>53</small><progress value="53" max="100"><div class="progress_bar"><span style="width: 53%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>17.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -679,9 +636,6 @@
 								<td class="t_artist">lorem1</td>
 								<td class="t_genre">Pop</td>
 								<td class="t_rank"><small>7</small><progress value="7" max="100"><div class="progress_bar"><span style="width: 7%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>18.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -690,9 +644,6 @@
 								<td class="t_artist">lorem1</td>
 								<td class="t_genre">Pop</td>
 								<td class="t_rank"><small>39</small><progress value="39" max="100"><div class="progress_bar"><span style="width: 39%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 							<tr>
 								<td class="t_number"><span>19.</span><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M-2-2h24v24H-2z"/><path d="M0 10c0 5.52 4.48 10 10 10s10-4.48 10-10S15.52 0 10 0 0 4.48 0 10zm8-4.5l6 4.5-6 4.5v-9z" fill="#FFF"/></g></svg></td>
@@ -701,9 +652,6 @@
 								<td class="t_artist">lorem1</td>
 								<td class="t_genre">Pop</td>
 								<td class="t_rank"><small>39</small><progress value="39" max="100"><div class="progress_bar"><span style="width: 39%"></span></div></progress></td>
-								<td class="t_del">
-									<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22.5C6.201 22.5 1.5 17.797 1.5 12 1.5 6.202 6.201 1.5 12 1.5S22.5 6.202 22.5 12c0 5.797-4.701 10.5-10.5 10.5zM12 0C5.372 0 0 5.37 0 12s5.372 12 12 12 12-5.37 12-12S18.628 0 12 0zm4.288 7.71a.76.76 0 0 0-1.069 0l-3.223 3.225-3.178-3.18a.75.75 0 1 0-1.06 1.065l3.177 3.172-3.2 3.203a.76.76 0 0 0 0 1.072.761.761 0 0 0 1.07 0l3.2-3.202 3.176 3.18a.751.751 0 1 0 1.062-1.065l-3.178-3.172 3.223-3.225a.76.76 0 0 0 0-1.073z" fill="#FFF" fill-rule="evenodd" opacity=".5"/></svg>
-								</td>
 							</tr>
 						</tbody>
 					</table>
@@ -749,54 +697,54 @@
 				<a href="#">+ Add this track to my playlist</a>
 			</div>
 		</div>
-        <div class="popup popup_login">
-        	<div class="_close_pop">&times;</div>
-        	<div class="popup_login__head">
-        		<div class="popup_login__head_item _current"><span>Login</span></div>
-        		<div class="popup_login__head_item"><span>Registration</span></div>
-        	</div>
-        	<form action="/" class="popup_login__tab _current">
-        		<div class="g_input">
-        			<input type="email" name="mail">
-        			<small>E-mail :</small>
-        		</div>
-        		<div class="g_input">
-        			<input type="password" name="password">
-        			<small>Password :</small>
-        		</div>
+		<div class="popup popup_login">
+			<div class="_close_pop">&times;</div>
+			<div class="popup_login__head">
+				<div class="popup_login__head_item _current"><span>Login</span></div>
+				<div class="popup_login__head_item"><span>Registration</span></div>
+			</div>
+			<form action="/" class="popup_login__tab _current">
+				<div class="g_input">
+					<input type="email" name="mail">
+					<small>E-mail :</small>
+				</div>
+				<div class="g_input">
+					<input type="password" name="password">
+					<small>Password :</small>
+				</div>
 				<button type="submit" class="popup__btn"><span>sign in</span> <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 185.3 185.3" width="512" height="512"><path d="M51.7 185.3c-2.7 0-5.5-1-7.6-3.1 -4.2-4.2-4.2-11 0-15.2l74.4-74.3L44.1 18.3c-4.2-4.2-4.2-11 0-15.2 4.2-4.2 11-4.2 15.2 0l81.9 81.9c4.2 4.2 4.2 11 0 15.2l-81.9 81.9C57.2 184.3 54.5 185.3 51.7 185.3z" fill="#FFF"/></svg></button>
-       			<h6>Forgot password ? <a href="#">Reset</a></h6>
-       			<div class="popup_login__share">
-       				<a href="#"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.2 112.2"><circle cx="56.1" cy="56.1" r="56.1" fill="#3B5998"/><path d="M70.2 58.3h-10v36.7H45V58.3h-7.2V45.4h7.2v-8.3c0-6 2.8-15.3 15.3-15.3L71.6 21.8v12.5h-8.2c-1.3 0-3.2 0.7-3.2 3.5v7.6h11.3L70.2 58.3z" fill="#FFF"/></svg></i></a>
+				<h6>Forgot password ? <a href="#">Reset</a></h6>
+				<div class="popup_login__share">
+					<a href="#"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.2 112.2"><circle cx="56.1" cy="56.1" r="56.1" fill="#3B5998"/><path d="M70.2 58.3h-10v36.7H45V58.3h-7.2V45.4h7.2v-8.3c0-6 2.8-15.3 15.3-15.3L71.6 21.8v12.5h-8.2c-1.3 0-3.2 0.7-3.2 3.5v7.6h11.3L70.2 58.3z" fill="#FFF"/></svg></i></a>
 					<a href="#"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.2 112.2"><circle cx="56.1" cy="56.1" r="56.1" fill="#55ACEE"/><path d="M90.5 40.3c-2.4 1.1-5 1.8-7.7 2.1 2.8-1.7 4.9-4.3 5.9-7.4 -2.6 1.5-5.5 2.7-8.5 3.3 -2.4-2.6-5.9-4.2-9.8-4.2 -7.4 0-13.4 6-13.4 13.4 0 1.1 0.1 2.1 0.3 3.1 -11.1-0.6-21-5.9-27.6-14 -1.2 2-1.8 4.3-1.8 6.7 0 4.7 2.4 8.8 6 11.2 -2.2-0.1-4.3-0.7-6.1-1.7 0 0.1 0 0.1 0 0.2 0 6.5 4.6 11.9 10.8 13.1 -1.1 0.3-2.3 0.5-3.5 0.5 -0.9 0-1.7-0.1-2.5-0.2 1.7 5.3 6.7 9.2 12.5 9.3 -4.6 3.6-10.4 5.7-16.7 5.7 -1.1 0-2.1-0.1-3.2-0.2 5.9 3.8 13 6 20.6 6 24.7 0 38.2-20.4 38.2-38.2 0-0.6 0-1.2 0-1.7C86.4 45.4 88.7 43 90.5 40.3L90.5 40.3z" fill="#F1F2F2"/></svg></i></a>
 					<a href="#"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.2 112.2"><circle cx="56.1" cy="56.1" r="56.1" fill="#4D76A1"/><path d="M54 80.7h4.4c0 0 1.3-0.1 2-0.9 0.6-0.7 0.6-1.9 0.6-1.9s-0.1-5.9 2.7-6.8c2.7-0.9 6.2 5.7 9.9 8.2 2.8 1.9 4.9 1.5 4.9 1.5l9.8-0.1c0 0 5.1-0.3 2.7-4.4 -0.2-0.3-1.4-3-7.3-8.5 -6.2-5.7-5.3-4.8 2.1-14.7 4.5-6 6.3-9.7 5.8-11.3 -0.5-1.5-3.9-1.1-3.9-1.1l-11.1 0.1c0 0-0.8-0.1-1.4 0.3 -0.6 0.4-1 1.2-1 1.2s-1.8 4.7-4.1 8.6c-4.9 8.4-6.9 8.8-7.7 8.3 -1.9-1.2-1.4-4.9-1.4-7.5 0-8.1 1.2-11.5-2.4-12.4 -1.2-0.3-2.1-0.5-5.2-0.5 -4 0-7.3 0-9.2 0.9 -1.3 0.6-2.2 2-1.6 2.1 0.7 0.1 2.4 0.4 3.3 1.6 1.1 1.5 1.1 5 1.1 5s0.7 9.6-1.5 10.7c-1.5 0.8-3.5-0.8-7.9-8.4 -2.3-3.9-4-8.2-4-8.2s-0.3-0.8-0.9-1.2c-0.7-0.5-1.7-0.7-1.7-0.7l-10.5 0.1c0 0-1.6 0-2.2 0.7 -0.5 0.6 0 1.9 0 1.9s8.2 19.3 17.6 29C44.3 81.3 54 80.7 54 80.7L54 80.7z" fill="#FFF"/></svg></i></a>
-       			</div>
-        	</form>
-        	<form action="/" class="popup_login__tab">
-        		<div class="popup_login__options">
+				</div>
+			</form>
+			<form action="/" class="popup_login__tab">
+				<div class="popup_login__options">
 					<input class="g_radio" type="radio" name="role" value="listener" id="role_1" checked>
 					<label class="g_label" for="role_1">Listener</label>
 					<input class="g_radio" type="radio" name="role" value="artist" id="role_2">
 					<label class="g_label" for="role_2">Artist</label>
 				</div>
-        		<div class="g_input">
-        			<input type="email" name="mail">
-        			<small>E-mail :</small>
-        		</div>
-        		<div class="g_input">
-        			<input type="password" name="password">
-        			<small>Password :</small>
-        		</div>
-        		<div class="g_input">
-        			<input type="password" name="repeat">
-        			<small>Retype Password :</small>
-        		</div>
-        		<div class="g_input">
-        			<input type="text" name="country">
-        			<small>Country :</small>
-        		</div>
 				<div class="g_input">
-					<input type="text" name="birthday">
+					<input type="email" name="mail">
+					<small>E-mail :</small>
+				</div>
+				<div class="g_input">
+					<input type="text" name="country">
+					<small>Country :</small>
+				</div>
+				<div class="g_input">
+					<input type="password" name="password">
+					<small>Password :</small>
+				</div>
+				<div class="g_input">
+					<input type="password" name="repeat">
+					<small>Retype Password :</small>
+				</div>
+				<div class="g_input">
+					<input type="text" data-lang="en" data-modal="true" data-theme="lalamba" data-large-default="true" data-large-mode="true"  data-lock="to" name="birthday">
 					<small>Birthday :</small>
 				</div>
 				<div class="popup_login__options_artist">
@@ -810,21 +758,21 @@
 					</div>
 				</div>
 				<button type="submit" class="popup__btn"><span>sign in</span> <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 185.3 185.3" width="512" height="512"><path d="M51.7 185.3c-2.7 0-5.5-1-7.6-3.1 -4.2-4.2-4.2-11 0-15.2l74.4-74.3L44.1 18.3c-4.2-4.2-4.2-11 0-15.2 4.2-4.2 11-4.2 15.2 0l81.9 81.9c4.2 4.2 4.2 11 0 15.2l-81.9 81.9C57.2 184.3 54.5 185.3 51.7 185.3z" fill="#FFF"/></svg></button>
-        	</form>
-        </div>
-        <div class="popup popup_about">
-        	<div class="_close_pop">&times;</div>
+			</form>
+		</div>
+		<div class="popup popup_about">
+			<div class="_close_pop">&times;</div>
 			<h2><span>about artist</span></h2>
-        	<div class="popup_about__txt _scroll">
-        		<div class="popup_about__img" style="background-image: url('images/bg/home.jpg')"></div>
-        		<h3>The Dillinger Escape Plan</h3>
-        		<h4>Early years (2008–2011)</h4>
-        		<p>In 2008, lead singer Dan Reynolds met drummer Andrew Tolman at Brigham Young University where they were both students.[9] Reynolds and Tolman added Andrew Beck, Dave Lemke, and Aurora Florence to play guitar, bass, and piano for their band. Their name is an anagram for a phrase only known to members of the group, that Reynolds stated each member approved of. The five-piece released an extended play titled Speak to Me that same year. Beck and Florence would also depart from the band's line-up that year. In 2009, Tolman recruited longtime high school friend Wayne Sermon, who had graduated from Berklee College of Music to play guitar. Tolman later recruited his wife, Brittany Tolman, to sing backup and play keys. Lemke left the band later on, leading Sermon to recruit another Berklee music student, Ben McKee, to join the band as their bassist and complete the lineup.[10][11] The band garnered a large following in their hometown of Provo, Utah, before the members moved to Las Vegas, the hometown of Dan Reynolds, where the band recorded and released their first three EPs.</p>
-        		<h4>Lorem ipsum dolor minima corporis assumenda!</h4>
+			<div class="popup_about__txt _scroll">
+				<div class="popup_about__img" style="background-image: url('images/bg/home.jpg')"></div>
+				<h3>The Dillinger Escape Plan</h3>
+				<h4>Early years (2008–2011)</h4>
+				<p>In 2008, lead singer Dan Reynolds met drummer Andrew Tolman at Brigham Young University where they were both students.[9] Reynolds and Tolman added Andrew Beck, Dave Lemke, and Aurora Florence to play guitar, bass, and piano for their band. Their name is an anagram for a phrase only known to members of the group, that Reynolds stated each member approved of. The five-piece released an extended play titled Speak to Me that same year. Beck and Florence would also depart from the band's line-up that year. In 2009, Tolman recruited longtime high school friend Wayne Sermon, who had graduated from Berklee College of Music to play guitar. Tolman later recruited his wife, Brittany Tolman, to sing backup and play keys. Lemke left the band later on, leading Sermon to recruit another Berklee music student, Ben McKee, to join the band as their bassist and complete the lineup.[10][11] The band garnered a large following in their hometown of Provo, Utah, before the members moved to Las Vegas, the hometown of Dan Reynolds, where the band recorded and released their first three EPs.</p>
+				<h4>Lorem ipsum dolor minima corporis assumenda!</h4>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae eaque suscipit saepe optio vero ex, quibusdam beatae voluptatem, excepturi quo repellat fugit? Alias, minus, maxime.</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolorum quod, beatae amet et cumque rerum qui eos, quos ex, quia. Nam blanditiis velit mollitia necessitatibus repellat adipisci nesciunt quam omnis illo quo, ea dolore voluptatibus beatae libero vel dignissimos corporis, earum quidem aliquam ex quaerat asperiores. Porro ex fugiat odio quidem voluptatum dicta possimus praesentium asperiores provident repudiandae tempora ea, error hic, quis. Autem beatae, quae ducimus optio reprehenderit placeat laboriosam cupiditate incidunt veniam velit iure quod voluptatum eaque cum, perspiciatis distinctio maiores quaerat quo in laudantium. Culpa, illo!</p>
-        	</div>
-        </div>
+			</div>
+		</div>
 		<div class="popup popup_lalamba">
 			<div class="_close_pop">&times;</div>
 			<h2>About Lalamba</h2>
@@ -857,19 +805,39 @@
 				<h3>Good Luck and welcome! :)</h3>
 			</div>
 		</div>
+      <div data-name="alert1" class="popup popup_message">
+			<div class="_close_pop">&times;</div>
+			<div class="popup_message__txt">
+				<h4>Your username and password were sent to your email...</h4>
+			</div>
+		</div>
+		<div data-name="alert2" class="popup popup_message">
+			<div class="_close_pop">&times;</div>
+			<div class="popup_message__txt">
+				<h4>Registration is done. Please check your email for confirmation link... <b>(maybe in Spam folder)</b></h4>
+			</div>
+		</div>
+		<div data-name="alert3" class="popup popup_message">
+			<div class="_close_pop">&times;</div>
+			<div class="popup_message__txt">
+				<h4>Your message was sent. <span>Thank You!</span></h4>
+			</div>
+		</div>
+		<div data-name="alert4" class="popup popup_message">
+			<div class="_close_pop">&times;</div>
+			<div class="popup_message__txt">
+				<h4>Your track was successfully uploaded</h4>
+			</div>
+		</div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="vendor/jquery-3.1.1.min"><\/script>')</script>
 		<script src="vendor/rangeSlider/rangeslider.min.js"></script>
         <script src="vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
-        <script src="vendor/jquery.validate.min.js"></script>
         <script src="vendor/jquery.nicefileinput.min.js"></script>
         <script src="vendor/jquery.tablesorter.min.js"></script>
 		<script src="vendor/jquery.validate.min.js"></script>
-		<script src="vendor/inputmask/inputmask.min.js"></script>
-		<script src="vendor/inputmask/inputmask.extensions.min.js"></script>
-		<script src="vendor/inputmask/inputmask.date.extensions.min.js"></script>
-		<script src="vendor/inputmask/jquery.inputmask.min.js"></script>
+		<script src="vendor/datedropper/datedropper.min.js"></script>
         <script src="js/main.js"></script>
 <!--		<script src="_trg.js"></script>-->
     </body>

@@ -595,6 +595,7 @@ b{
 	@extend ._flex_c_c;
 	margin-top: auto;
 	margin-bottom: 10vh;
+	transition: transform $t*2.5;
 	a{
 		width: 47px;
 		height: 47px;
@@ -948,9 +949,10 @@ b{
 		border-top: 1px solid  rgba(255, 255, 255, 0.1);
 		a{
 			@extend ._flex_fs_c;
-			&:not(:last-of-type){
-				margin-bottom: 25px;
-			}
+			margin-bottom: 25px;
+//			&:not(:last-of-type){
+//				margin-bottom: 25px;
+//			}
 			i{
 				min-width: 35px;
 				text-align: center;
@@ -1245,6 +1247,9 @@ b{
 			background-position: center;
 		}
 	}
+	&__btn{
+		display: none;
+	}
 }
 .rating{
 	width: 100%;
@@ -1295,6 +1300,9 @@ b{
 			}
 		}
 	}
+	&__filter{
+		display: none;
+	}
 }
 
 .overlay{
@@ -1318,7 +1326,7 @@ b{
 }
 .popup{
 	position: absolute;
-	left: 50%;
+	//left: 50%;
 	top: 0;
 	z-index: 9999;
 	background-color: #fff;
@@ -1330,6 +1338,7 @@ b{
 		visibility: visible;
 		transform: none;
 		opacity: 1;
+		left: 50%;
 	}
 	._close_pop{
 		font-size: 34px;
@@ -1647,6 +1656,50 @@ b{
 			}
 		}
 	}
+	&_message{
+		width: 360px;
+		text-align: center;
+		padding: 25px;
+		background: rgba(255, 255, 255, 0.96);
+		top: inherit;
+		left: inherit !important;
+		right: 3%;
+		bottom: 3%;
+		z-index: 5;
+		&._visible{
+			.popup_message__txt{
+				@for $n from 2 through 10{
+					:not(.ps-scrollbar-y):nth-child(#{$n}){
+						animation: down $t*$n*0.8;
+					}
+				}
+			}
+		}
+		&__txt{
+			max-height: 525px;
+			position: relative;
+			h4{
+				font-size: 0.96em;
+				color: #485465;
+				font-weight: 700;
+				margin-bottom: 5px;
+			}
+			span{
+				color: $g;
+			}
+			b{
+				color: $r;
+			}
+		}
+		._close_pop{
+			position: absolute;
+			top: 0;
+			right: -27px;
+			color: #fff;
+			font-weight: 400;
+			opacity: 1;
+		}
+	}
 	&_like{
 		max-width: 300px;
 		padding-bottom: 15px;
@@ -1769,8 +1822,326 @@ b{
 /* ==========================================================
    _responsive
    ========================================================== */
+@media only screen and (max-width: 1599.5px) {
+	.rating__table th:last-of-type, .rating__table td:last-of-type, .playlist__table th:last-of-type, .playlist__table td:last-of-type {
+		 padding-right: 1.7vw;
+	}
+	.rating__table th.t_track, .rating__table td.t_track, .playlist__table th.t_track, .playlist__table td.t_track {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}
 @media only screen and (max-width: 1199.5px) {
+	.s_text{
+		padding-left: 30px;
+	}
+	.menu{
+		width: 290px;
+	}
+	.playlist{
+		width: calc(100% - 290px);
+		&__table{
+			thead{
+				width: calc(100% - 290px);
+			}
+			th,
+			td{
+				&.t_img{
+					width: 10%;
+				}
+				&.t_artist{
+					width: 16%;
+				}
+				&.t_genre{
+					width: 12%;
+				}
+				&.t_lang{
+					width: 15%;
+				}
+			}
+		}
 
+	}
+	.rating{
+		&__head{
+			padding: 40px 20px;
+			a:not(:last-of-type) {
+				margin-right: 2vw;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 991.5px) {
+	.playlist{
+		z-index: 56;
+		width: 100%;
+		padding-top: 60px;
+		&__table{
+			thead{
+				width: 100%;
+				margin-top: 40px;
+			}
+			&_wrp{
+				max-height: calc(100% - 80px);
+			}
+		}
+		&__head{
+			padding-bottom: 20px;
+			 a:before{
+				bottom: -18px;
+			}
+		}
+	}
+	.rating{
+		padding-bottom: 20px;
+		&__table{
+			thead{
+				width: 100%;
+				margin-top: -20px;
+			}
+			&_wrp{
+				max-height: calc(100% - 60px);
+			}
+		}
+		&__head{
+			padding-bottom: 20px;
+			 a:before{
+				bottom: -18px;
+			}
+		}
+		&__close{
+			margin-top: 20px;
+		}
+	}
+	.popup_message{
+		right: 6%;
+		top: 2%;
+		bottom: inherit;
+	}
+}
+@media only screen and (max-width: 768.5px){
+	.header{
+		padding: 15px;
+		&__hamb{
+			margin-right: 20px;
+		}
+	}
+	.footer{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.s_text{
+		padding: 15px;
+		h1{
+			font-size: 38px;
+			small{
+				color: #fff;
+				transform: translateY(6px);
+				opacity: 1;
+				border-bottom: 2px solid $g;
+				line-height: 0.8em;
+			}
+		}
+	}
+	.s_btns{
+		margin-bottom: 5vh;
+	}
+	.menu{
+		&__filter_item label{
+			&:before{
+				top: .2em;
+			}
+			&:after{
+				top: 0.4em;
+			}
+		}
+		width: 100%;
+		font-size: 22px;
+		&__panel{
+			a i {
+    			min-width: 20px;
+				margin-left: -5px;
+			}
+			padding: 15px 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			.NFI-wrapper{
+    			margin-bottom: 10px;
+			}
+		}
+	}
+	.rating,
+	.playlist{
+		height: 100vh;
+		overflow: hidden;
+		&__table{
+			td,
+			th{
+				&.t{
+					&_artist,
+					&_genre,
+					&_lang,
+					&_mood,
+					&_rank{
+						display: none;
+					}
+					&_number{
+						width: 50px;
+						padding: 0 10px;
+    					text-align: center;
+						.play-button{
+							left: 20px;
+						}
+					}
+					&_img{
+						width: 68px;
+					}
+					&_track{
+						width: calc(100%  -  158px) !important;
+					}
+					&_del{
+						width: 40px;
+					}
+				}
+			}
+		}
+	}
+	.rating{
+		transition: transform $t;
+		transform: translateY(-170px) translateZ(0);
+    	height: calc(100vh + 170px);
+		&__head{
+			padding: 10px 15px 3px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			a{
+				text-align: left;
+				margin-bottom: 10px;
+				font-size: 1.1em;
+				&:before{
+					bottom: -1px;
+				}
+				&._current:before{
+					height: 2px;
+				}
+			}
+		}
+		&__btn {
+			top: 13px;
+			right: 15px;
+		}
+
+		&._trans{
+			transform: translateY(0) translateZ(0);
+    		height: 100vh;
+			.rating{
+				&__table_wrp{
+					max-height: calc(100vh - 168px);
+				}
+				&__head a{
+					@for $n from 1 through 10{
+						&:nth-of-type(#{$n}){
+							animation: down $t*$n*1.6 !important;
+						}
+					}
+				}
+			}
+
+		}
+		&__head{
+			flex-direction: column;
+			&_wrp{
+				align-items: flex-start !important;
+				max-height: 100vh;
+			}
+		}
+		&__table{
+			thead{
+				margin-top: 67px;
+			}
+			&_wrp {
+				max-height: 100vh;
+			}
+		}
+		&__close{
+			margin-top: 0;
+			margin-right: 0;
+			position: fixed;
+			top: 178px;
+    		right: 9px;
+			z-index: 99;
+		}
+		&__filter{
+			display: block;
+			position: fixed;
+			bottom: 15px;
+			right: 9px;
+			z-index: 99;
+		}
+	}
+	.popup{
+		&_login,
+		&_lalamba,
+		&_about,
+		&_user{
+			width: 100%;
+			margin-left: 0 !important;
+			left: 0 !important;
+			top: 0 !important;
+			overflow: hidden;
+			height: 100vh;
+			border-radius: 0;
+			&__txt{
+				max-height: calc(100vh  -  75px);
+
+			}
+			._close_pop{
+				top: 25px;
+				right: 25px;
+				color: #485465;
+			}
+		}
+		&_user,
+		&_login{
+			overflow-y: auto;
+			font-size: 17px;
+			&__head{
+				&_item{
+					padding-top: 0;
+					margin-top: 33px;
+					border-top: 1px solid rgba(155,169,188,0.33);
+				}
+			}
+			&__tab{
+				padding-top: 30px;
+			}
+			._close_pop{
+				top: 5px;
+    			right: 10px;
+				color: #485465;
+			}
+		}
+		._close_pop{
+			font-size: 48px;
+		}
+		&__btn{
+			align-self: stretch;
+		}
+	}
+	.playlist{
+		&__head{
+			position: relative;
+			padding: 40px 15px 20px;
+		}
+		&__btn{
+			display: block;
+			position: absolute;
+			top: 33px;
+			right: 15px;
+		}
+	}
 }
 @media only screen and (max-height: 699.5px) {
 	.popup_login__tab{
@@ -1794,7 +2165,149 @@ b{
 		}
 	}
 }
+@media only screen and (max-width: 480.5px){
+	.header{
+		&__hamb{
+			margin-right: 10px;
+		}
+		&__login{
+			width: 88px;
+    		height: 37px;
+		}
+	}
+	.footer{
+		&__volume{
+			width: 100%;
+			&._active{
+				width: 100%;
+			}
+		}
+		&__social{
+			padding: 13px 10px;
+			width: 37vh;
+			display: flex;
+			justify-content: flex-end;
+			a:not(:last-of-type){
+				margin-right: 5px;
+			}
+			&._active{
+				transform: none;
+			}
+		}
+	}
+	.s_text{
+		h1{
+			font-size: 32px;
+			small{
+				display: none;
+			}
+		}
+	}
+	.s_btns{
+		a{
+			width: 44px;
+			height: 44px;
+			margin-left: 10px;
+    		margin-right: 10px;
+		}
+	}
 
+	.menu{
+		max-height: 100%;
+		&__body{
+			padding-top: 70px;
+		}
+		&__tabs{
+			padding: 0 15px 15px;
+			flex-wrap: wrap;
+			&_item{
+				margin: 5px 0;
+				font-size: .85em;
+				width: 48%;
+				text-align: center;
+				&:before{
+					bottom: -1px;
+				}
+				&._current:before{
+					height: 2px;
+				}
+			}
+
+		}
+
+//
+	}
+	.playlist{
+		&__head{
+			padding: 10px 15px;
+			a:not(:last-of-type) {
+				margin-right: 20px;
+			}
+		}
+		&__table{
+			&_wrp{
+				margin-top: 10px;
+				max-height: calc(100% - 50px);
+			}
+			thead{
+				margin-top: 10px;
+			}
+		}
+		&__btn {
+			top: 8px;
+			right: 15px;
+		}
+	}
+	.popup{
+		&_about,
+		&_lalamba{
+			._close_pop{
+				top: 10px;
+				right: 10px;
+			}
+		}
+		&_like{
+			width: auto;
+		}
+		&_user,
+		&_login{
+			&__tab:last-of-type>.g_input {
+				width: 100%;
+			}
+			._close_pop{
+				font-size: 40px;
+			}
+		}
+		&_message{
+			width: 100%;
+			right: 0;
+			top: 0;
+			bottom: inherit;
+			border-radius: 0;
+			padding-top: 33px;
+			overflow: hidden;
+			._close_pop{
+				right: 7px;
+    			top: 7px;
+				color: #485465;
+
+			}
+		}
+	}
+
+}
+
+//@media only screen and (max-height: 600.5px){
+//	body,
+//	html{
+////		overflow: hidden;
+////		min-height: 600px;
+//	}
+//	.g_wrp{
+//		//min-height: 600px;
+//		max-height: 100vh;
+//	}
+//}
 
 progress[value] {
   	/* Reset the default appearance */
@@ -1893,8 +2406,8 @@ progress[value]::-webkit-progress-value {
 	}
 }
 .NFI-button {
-    background-color: transparent;
-    margin-top: 0;
+   background-color: transparent;
+   margin-top: 0;
 	position: relative;
 	z-index: 5;
 	flex-grow: 2;
@@ -1904,10 +2417,10 @@ progress[value]::-webkit-progress-value {
 	height: 40px;
     border-radius: 3px;
 	text-transform: uppercase;
-	background-color: $r;
+	background-color: $g;
 	font-size: 14px;
 	font-weight: 700;
-    transition: background $t;
+   transition: background $t;
 	&:before{
 		content: '';
 		position: absolute;
@@ -1928,7 +2441,7 @@ progress[value]::-webkit-progress-value {
 		height: 70px;
 		width: 70px;
 		transform: rotate(45deg);
-		background-color: $g;
+		background-color: $r;
 		position: absolute;
 		left: 0;
 		margin-left: -84px;
