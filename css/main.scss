@@ -162,6 +162,9 @@ $t: .15s;
 $r: #f04c5e;
 $g: #75d0a4;
 
+asd{
+
+}
 
 /* ==========================================================
    _pages
@@ -410,13 +413,28 @@ b{
 		@extend ._flex_fs_c;
 		cursor: pointer;
 		pointer-events: all;
-		&:hover{
-			.header__user{
-				&_name{
-					color: $g;
+		&_pop{
+			@extend ._flex_fs_c;
+			&:hover{
+				.header__user{
+					&_name{
+						color: $g;
+					}
+					&_img{
+						border-color: $r;
+					}
 				}
-				&_img{
-					border-color: $r;
+			}
+		}
+		&_logout{
+			&:hover{
+				path{
+					&:first-of-type{
+						fill: $r;
+					}
+					&:last-of-type{
+						fill: $g;
+					}
 				}
 			}
 		}
@@ -431,11 +449,11 @@ b{
 			transition: $t;
 		}
 		&_name{
-			margin-right: 15px;
+			margin-right: 19px;
 			font-size: 0.88em;
 			font-weight: 700;
 			color: #fff;
-			margin-left: 20px;
+			margin-left: 10px;
 		}
 	}
 }
@@ -581,10 +599,11 @@ b{
 		small{
 			position: absolute;
 			font-size: 1.1rem;
-			top: -24px;
-			right: 0;
+			top: 50%;
+			margin-top: -1.11rem;
+			right: -5.5rem;
 			color: $r;
-			transform: translateY(30px);
+			transform: translateX(-30px);
 			font-weight: 400;
 			opacity: 0;
 			transition: transform $t*2, opacity $t;

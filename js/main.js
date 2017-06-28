@@ -304,7 +304,12 @@ $(document).ready(function(){
 	});
 	//playlist sorting
 	$('.playlist__table').tablesorter({
-		cssHeader: 'table_header'
+		cssHeader: 'table_header',
+		headers: {
+			8: {
+				sorter: false
+			}
+		}
 	});
 	//playlist tabs
 	$('.playlist__head a').click(function(){
@@ -316,7 +321,9 @@ $(document).ready(function(){
 			numbers = tr.closest('table').find('tbody .t_number'),
 			tr_n = tr.index()-1;
 		var n = 0;
-		tr.fadeOut(300);
+		if($(this).get(0).tagName!="TH"){
+			tr.fadeOut(300);
+		}
 		//script for table numeration update (craching when table already sort)
 
 
