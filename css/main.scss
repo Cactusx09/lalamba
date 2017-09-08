@@ -2193,6 +2193,20 @@ b{
 			width: 88px;
     		height: 37px;
 		}
+		&__user{
+			&_pop{
+				position: relative;
+				margin-right: 20px;
+			}
+			&_name{
+				position: absolute;
+				bottom: -26px;
+				transform: translateX(-50%);
+				left: 50%;
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
 	}
 	.footer{
 		&__volume{
