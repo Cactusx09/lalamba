@@ -298,7 +298,7 @@ $(document).ready(function(){
 
 	//playlist open
 	$('.menu__panel_playlist').click(function(){
-		$('.playlist').addClass('_active');
+		$('.playlist').toggleClass('_active');
 		$('.rating').removeClass('_active');
 		$('.playlist__table_wrp').perfectScrollbar();
 	});
