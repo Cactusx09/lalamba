@@ -285,6 +285,15 @@ b{
 			}
 		}
 	}
+	.alert{
+		position: absolute;
+		left: 0;
+		top: 100%;
+		color: $r;
+		text-transform: lowercase;
+		letter-spacing: 1px;
+		font-size: 0.7rem;
+	}
 }
 .g_select{
 	position: relative;
@@ -1986,7 +1995,7 @@ b{
 		}
 		&__form{
 			display: flex;
-			margin-bottom: 15px;
+			margin-bottom: 30px;
 			.g_input{
 				flex-grow: 2;
 				margin-right: -1px;
