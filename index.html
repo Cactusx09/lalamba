@@ -865,30 +865,28 @@
 			<a href="#" class="popup__outline _open_pop" data-name="login" data-tab="register"><span>Not a Member? <b>Click here to Register !</b></span></a>
 			<a href="#" class="popup__outline _open_pop" data-name="login" data-tab="login"><span>Already a Member? <b>Click here to Login !</b></span></a>
 		</div>
-        <div data-name="alert1" class="popup popup_message">
-			<div class="_close_pop">&times;</div>
-			<div class="popup_message__txt">
-				<h4>Your username and password were sent to your email...</h4>
+
+		<div class="popup_message">
+			<!--	error	-->
+			<div class ="popup_message__item _red">
+				<i><img src="images/ico/red.svg" alt=""></i>
+				<h6>Please accept User Agreement to finish your upload</h6>
+				<div class="popup_message__item_close"><span>&times;</span></div>
+			</div>
+			<!--	done	-->
+			<div class="popup_message__item _green">
+				<i><img src="images/ico/green.svg" alt=""></i>
+				<h6>Your track was successfully uploaded</h6>
+				<div class="popup_message__item_close"><span>&times;</span></div>
+			</div>
+			<!--	info    -->
+			<div class="popup_message__item _blue _visible">
+				<i><img src="images/ico/blue.svg" alt=""></i>
+				<h6>Some info for example</h6>
+				<div class="popup_message__item_close"><span>&times;</span></div>
 			</div>
 		</div>
-		<div data-name="alert2" class="popup popup_message">
-			<div class="_close_pop">&times;</div>
-			<div class="popup_message__txt">
-				<h4>Registration is done. Please check your email for confirmation link... <b>(maybe in Spam folder)</b></h4>
-			</div>
-		</div>
-		<div data-name="alert3" class="popup popup_message">
-			<div class="_close_pop">&times;</div>
-			<div class="popup_message__txt">
-				<h4>Your message was sent. <span>Thank You!</span></h4>
-			</div>
-		</div>
-		<div data-name="alert4" class="popup popup_message">
-			<div class="_close_pop">&times;</div>
-			<div class="popup_message__txt">
-				<h4>Your track was successfully uploaded</h4>
-			</div>
-		</div>
+
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="vendor/jquery-3.1.1.min"><\/script>')</script>

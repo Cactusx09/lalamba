@@ -395,10 +395,41 @@ $(document).ready(function(){
 //		},300);
 	});
 
-	//pop_message
-//	setTimeout(function(){
-//		$('.popup_message[data-name="alert3"]').addClass('_visible');
-//	},2000);
+	//popup message example
+	var messageCounter = 0,
+		popupError = '<div class ="popup_message__item _red"><i><img src="images/ico/red.svg" alt=""></i><h6>Please accept User Agreement to finish your upload</h6><div class="popup_message__item_close"><span>&times;</span></div></div>',
+		popupDone = '<div class="popup_message__item _green"><i><img src="images/ico/green.svg" alt=""></i><h6>Your track was successfully uploaded</h6><div class="popup_message__item_close"><span>&times;</span></div></div>',
+		popupInfo = '<div class="popup_message__item _blue"><i><img src="images/ico/blue.svg" alt=""></i><h6>We resend your new password on your mail</h6><div class="popup_message__item_close"><span>&times;</span></div></div>'
+	var popup_messageTest = setInterval(function(){
+		switch(messageCounter){
+			case 0:
+				$('.popup_message').append(popupError);
+				setTimeout(function(){
+					$('.popup_message__item').last().addClass('_visible');
+				},700);
+				break;
+			case 1:
+				$('.popup_message').append(popupDone);
+				setTimeout(function(){
+					$('.popup_message__item').last().addClass('_visible');
+				},700);
+				break;
+			case 2:
+				$('.popup_message').append(popupInfo);
+				setTimeout(function(){
+					$('.popup_message__item').last().addClass('_visible');
+				},700);
+				clearInterval(popup_messageTest);
+				break;
+		}
+		messageCounter++;
+	},2300);
+
+	//popup message remove
+	$('.popup_message').on('click','.popup_message__item_close',function(){
+		$(this).closest('.popup_message__item').removeClass('_visible');
+	});
+
 
 	//mobile
 	$('.playlist__btn').click(function(){
