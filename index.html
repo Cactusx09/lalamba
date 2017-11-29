@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="vendor/rangeSlider/rangeslider.css">
         <link rel="stylesheet" href="vendor/perfect-scrollbar/css/perfect-scrollbar.min.css">
 		<link rel="stylesheet" href="vendor/datedropper/datedropper.min.css">
+        <link rel="stylesheet" href="vendor/dropzone/basic.css">
         <script src="vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
@@ -170,7 +171,7 @@
 				<div class="menu__bot">
 					<div class="menu__panel">
 						<a href="#" class="menu__panel_playlist"><i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20"><style>.a{fill:rgba(255, 255, 255, 0.48);}</style><path d="M477.6 128.1C443.4 68.9 388.3 26.5 322.2 8.8 256.2-8.9 187.3 0.2 128.1 34.4 68.9 68.6 26.5 123.8 8.8 189.8c-17.7 66-8.6 135 25.6 194.2C68.6 443.1 123.8 485.5 189.8 503.2c22 5.9 44.4 8.8 66.6 8.8 44.3 0 88.1-11.6 127.5-34.4 59.2-34.2 101.5-89.4 119.2-155.4C520.9 256.2 511.8 187.2 477.6 128.1zM477.4 315.3c-15.8 59.1-53.8 108.6-106.8 139.2 -53 30.6-114.8 38.7-174 22.9 -59.1-15.8-108.6-53.8-139.2-106.8 -30.6-53-38.7-114.8-22.9-174C50.4 137.5 88.4 88.1 141.4 57.5c35.3-20.4 74.5-30.8 114.2-30.8 19.9 0 40 2.6 59.7 7.9 59.1 15.8 108.6 53.8 139.2 106.8C485.1 194.4 493.3 256.2 477.4 315.3z" class="a"/><path d="M378.8 231.9l-164.5-95c-8.7-5-19.2-5-27.9 0 -8.7 5-13.9 14.1-13.9 24.2v190c0 10.1 5.2 19.1 13.9 24.2 4.4 2.5 9.2 3.8 13.9 3.8 4.8 0 9.6-1.3 13.9-3.8l164.5-95c8.7-5 13.9-14.1 13.9-24.2C392.7 245.9 387.5 236.9 378.8 231.9zM365.5 257.1l-164.5 95c-0.2 0.1-0.6 0.4-1.2 0 -0.6-0.4-0.6-0.8-0.6-1.1v-190c0-0.2 0-0.7 0.6-1.1 0.2-0.1 0.5-0.2 0.6-0.2 0.3 0 0.5 0.1 0.6 0.2l164.5 95c0.2 0.1 0.6 0.4 0.6 1.1C366.1 256.7 365.7 257 365.5 257.1z" class="a"/><path d="M413.3 134.4c-31.7-40.9-79.3-68.4-130.7-75.5 -7.3-1-14 4.1-15 11.4 -1 7.3 4.1 14 11.4 15 44.5 6.1 85.8 29.9 113.2 65.4 2.6 3.4 6.6 5.2 10.5 5.2 2.8 0 5.7-0.9 8.1-2.8C416.7 148.6 417.8 140.3 413.3 134.4z" class="a"/></svg></i><span>My Playlist</span></a>
-						<input name="upload" type="file" data-text="Upload My Track">
+						<a href="#" class="menu__bot_upload _open_pop" data-name="upload"><small>Upload My Track</small></a>
 <!--						<a href="#"><i><svg width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><g stroke="#FFF" fill="none" fill-rule="evenodd" opacity=".5"><ellipse cx="8.5" cy="5.2" rx="4.5" ry="4.447"/><path d="M16.241 12.824A10.96 10.96 0 0 0 8.5 9.647a10.96 10.96 0 0 0-7.741 3.177A10.96 10.96 0 0 0 8.5 16a10.96 10.96 0 0 0 7.741-3.176z"/></g></svg></i><span>My Profile</span></a>-->
 <!--						<a href="#"><i><svg width="14" height="16" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg"><g fill="#FFF" fill-rule="evenodd" opacity=".5"><path d="M6.748 14.373H2.81a1.95 1.95 0 0 1-1.938-1.957V2.83A1.95 1.95 0 0 1 2.81.874h4.002c.24 0 .432-.194.432-.437A.433.433 0 0 0 6.812 0H2.81C1.263 0 .007 1.272.007 2.831v9.585c0 1.562 1.26 2.83 2.803 2.83h3.938c.24 0 .432-.193.432-.436a.435.435 0 0 0-.432-.437z"/><path d="M13.872 7.316L11.124 4.54a.428.428 0 0 0-.612 0 .439.439 0 0 0 0 .618l2.012 2.032H3.749a.433.433 0 0 0-.433.437c0 .242.193.436.433.436h8.775l-2.012 2.033a.439.439 0 0 0 .304.747.42.42 0 0 0 .305-.13l2.748-2.776a.44.44 0 0 0 .003-.621z"/></g></svg></i><span>Logout</span></a>-->
 					</div>
@@ -887,12 +888,120 @@
 			</div>
 		</div>
 
+		<div class="popup popup_upload">
+			<div class="_close_pop">&times;</div>
+			<form action="/" class="popup_upload__form">
+				<div class="popup_upload__head">
+					<i><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="32" viewBox="0 0 26 32"><defs><path id="m46sa" d="M726.46 825.19v15.1c0 1.81-1.4 3.2-3.24 3.2a3.16 3.16 0 0 1-3.25-3.2c0-1.75 1.46-3.2 3.3-3.2h2.11v-13.14c-.07-.2 0-.42.16-.58.16-.16.39-.17.58-.08.13.04.23.13.29.24l2.98 3.24a5.68 5.68 0 0 1 1.13 5.43l-.43 1.33c-.1.22-.27.37-.54.37h-.16a.6.6 0 0 1-.38-.69l.43-1.33c.54-1.54.16-3.2-.92-4.42zm-1.08 15.1v-2.13h-2.1c-1.25 0-2.23.96-2.23 2.13s.98 2.13 2.17 2.13 2.16-.96 2.16-2.13z"/><path id="m46sb" d="M739.98 845.08a5.89 5.89 0 0 1-5.95 5.86 5.95 5.95 0 0 1-5.3-3.2h-13.1c-.92 0-1.62-.69-1.62-1.6V820.6c0-.9.7-1.6 1.62-1.6h16.2l.15.01a.5.5 0 0 1 .36.24l4.14 4.08c.13.07.22.2.25.35 0 .05.01.1 0 .14v16.04a5.83 5.83 0 0 1 3.25 5.22zm-7.57-24.27v2.45h2.49zm-4.33 24.43v-.16a5.89 5.89 0 0 1 6.1-5.85c.5.01.99.07 1.48.21v-15.12h-3.8c-.32 0-.53-.2-.53-.53v-3.72h-15.7c-.32 0-.54.2-.54.53v25.55c0 .32.22.53.54.53h12.67c-.15-.48-.2-.96-.22-1.44zm10.82-.16a4.78 4.78 0 0 0-4.69-4.78h-.18a4.81 4.81 0 0 0-4.87 4.78v.18c.03.59.19 1.2.43 1.74l.04.14a4.86 4.86 0 0 0 4.4 2.73c2.7 0 4.87-2.12 4.87-4.79z"/><path id="m46sc" d="M737.28 844.55h-2.7v-2.66c0-.32-.22-.53-.54-.53-.33 0-.54.21-.54.53v2.66h-2.7c-.33 0-.55.22-.55.54 0 .32.22.53.54.53h2.7v2.66c0 .32.22.53.55.53.32 0 .54-.21.54-.53v-2.66h2.7c.33 0 .55-.21.55-.53 0-.32-.22-.54-.55-.54z"/></defs><g><g transform="translate(-714 -819)"><g><use fill="#fff" xlink:href="#m46sa"/></g><g><use fill="#fff" xlink:href="#m46sb"/></g><g><use fill="#fff" xlink:href="#m46sc"/></g></g></g></svg></i>
+					<span>add new track</span>
+				</div>
+				<div class="popup__fields">
+					<div class="g_input">
+						<input type="text" name="name">
+						<small>Track name</small>
+					</div>
+					<div class="popup_upload__options">
+						<small>Explicit: </small>
+						<input class="g_radio" type="checkbox" name="explicit" id="exp_1">
+						<label class="g_label" for="exp_1">Yes</label>
+					</div>
+					<div class="g_select">
+						<input type="text" name="genre" value="">
+						<div class="g_select__head">
+							<span>Genre</span>
+							<small><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" width="15"><path d="m121.3 34.6c-1.6-1.6-4.2-1.6-5.8 0l-51 51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8 0-1.6 1.6-1.6 4.2 0 5.8l53.9 53.9c0.8 0.8 1.8 1.2 2.9 1.2 1 0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" fill="#90a4ae"/></svg></small>
+						</div>
+						<div class="g_select__body">
+							<a href="#"><span>Pop</span></a>
+							<a href="#"><span>Rock</span></a>
+							<a href="#"><span>Rap</span></a>
+							<a href="#"><span>Disco</span></a>
+							<a href="#"><span>Edm</span></a>
+							<a href="#"><span>Idm</span></a>
+							<a href="#"><span>Breakcore</span></a>
+							<a href="#"><span>Classic</span></a>
+							<a href="#"><span>Glitch</span></a>
+							<a href="#"><span>Speedcore</span></a>
+							<a href="#"><span>Chaotic hardcore</span></a>
+							<a href="#"><span>Math-rock</span></a>
+							<a href="#"><span>Mathcore</span></a>
+							<a href="#"><span>Grime</span></a>
+						</div>
+					</div>
+					<div class="g_select">
+						<input type="text" name="mood" value="">
+						<div class="g_select__head">
+							<span>Mood</span>
+							<small><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" width="15"><path d="m121.3 34.6c-1.6-1.6-4.2-1.6-5.8 0l-51 51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8 0-1.6 1.6-1.6 4.2 0 5.8l53.9 53.9c0.8 0.8 1.8 1.2 2.9 1.2 1 0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" fill="#90a4ae"/></svg></small>
+						</div>
+						<div class="g_select__body">
+							<a href="#"><span>Chill</span></a>
+							<a href="#"><span>Sleep</span></a>
+							<a href="#"><span>Disco</span></a>
+						</div>
+					</div>
+					<div class="g_select">
+						<input type="text" name="language" value="">
+						<div class="g_select__head">
+							<span>Language</span>
+							<small><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" width="15"><path d="m121.3 34.6c-1.6-1.6-4.2-1.6-5.8 0l-51 51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8 0-1.6 1.6-1.6 4.2 0 5.8l53.9 53.9c0.8 0.8 1.8 1.2 2.9 1.2 1 0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z" fill="#90a4ae"/></svg></small>
+						</div>
+						<div class="g_select__body">
+							<a href="#"><span>USA</span></a>
+							<a href="#"><span>Ukraine</span></a>
+							<a href="#"><span>UAH</span></a>
+							<a href="#"><span>Austria</span></a>
+							<a href="#"><span>Australia</span></a>
+							<a href="#"><span>Sweeden</span></a>
+							<a href="#"><span>Hermany</span></a>
+							<a href="#"><span>Hermany</span></a>
+							<a href="#"><span>Hermany</span></a>
+						</div>
+					</div>
+					<div class="g_upload">
+						<div class="g_upload__zone">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="45" viewBox="0 0 24 45"><defs><path id="1q1qa" d="M712 1339.7v15.69a12 12 0 0 1-5.54 10.12v1.89h.92c.51 0 .93.4.93.92v2.77h.92a.92.92 0 1 1 0 1.84h-.92v2.77c0 .51-.42.93-.93.93h-.92v2.81c0 .51-.41.92-.92.92h-11.08a.92.92 0 0 1-.92-.92v-2.81h-.92a.92.92 0 0 1-.93-.93v-2.77h-.92a.92.92 0 0 1 0-1.84h.92v-2.77c0-.51.42-.93.93-.93h.92v-1.88a12.08 12.08 0 0 1-5.54-10.12v-15.7a3.7 3.7 0 0 1 7.38 0v7.89a3.68 3.68 0 0 1 4.62.75 3.69 3.69 0 0 1 4.62-.75v-7.89a3.7 3.7 0 0 1 7.38 0zm-7.38 36.93h-9.24v1.89h9.24zm-11.08-7.39v5.54h12.92v-5.54zm16.61-13.85v-15.7a1.85 1.85 0 0 0-3.69 0v12.93a.92.92 0 1 1-1.84 0v-1.85a1.85 1.85 0 0 0-3.7 0v1.85a.92.92 0 1 1-1.84 0v-1.85a1.85 1.85 0 0 0-3.7 0v1.85a.92.92 0 1 1-1.84 0v-12.93a1.85 1.85 0 0 0-3.7 0v15.7a10.14 10.14 0 0 0 5.08 8.8c.29.16.46.47.46.8v2.4h9.24v-2.4c0-.33.17-.64.46-.8a10.22 10.22 0 0 0 5.07-8.8z"/></defs><g><g transform="translate(-688 -1336)"><use fill="#fff" xlink:href="#1q1qa"/></g></g></svg>
+							<p>Upload <br>your track</p>
+						</div>
+						<div class="g_upload__info">
+							<h6>Track file (.mp3 bitrate > 254k)</h6>
+							<div class="g_upload__btn">
+								<span>Drop here or choose file</span>
+								<i><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16"><defs><path id="enyoa" d="M975 1378a6 6 0 1 1 12 0 6 6 0 0 1-12 0z"/><path id="enyob" d="M989 1386l-3-3"/></defs><g><g transform="translate(-974 -1371)"><g><use fill="#fff" fill-opacity="0" stroke="#ff585b" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" stroke-width="2" xlink:href="#enyoa"/></g><g><use fill="#fff" fill-opacity="0" stroke="#ff585b" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" stroke-width="2" xlink:href="#enyob"/></g></g></g></svg></i>
+							</div>
+						</div>
+					</div>
+					<div class="popup_upload__options">
+						<small class="_open_pop" data-name="ua"><b>Accepted UA:</b> </small>
+						<input class="g_radio" type="checkbox" name="accepted" id="accepted_1">
+						<label class="g_label" for="accepted_1">Yes</label>
+					</div>
+				</div>
+				<div class="popup__bot">
+					<button class="popup__btn _outline _close_popup"><span>cancel</span></button>
+					<button type="submit" class="popup__btn"><span>upload</span> <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 185.3 185.3" width="512" height="512"><path d="M51.7 185.3c-2.7 0-5.5-1-7.6-3.1 -4.2-4.2-4.2-11 0-15.2l74.4-74.3L44.1 18.3c-4.2-4.2-4.2-11 0-15.2 4.2-4.2 11-4.2 15.2 0l81.9 81.9c4.2 4.2 4.2 11 0 15.2l-81.9 81.9C57.2 184.3 54.5 185.3 51.7 185.3z" fill="#FFF"/></svg></button>
+				</div>
+			</form>
+		</div>
+		<div class="popup popup_ua">
+			<div class="_close_pop _open_pop" data-name="upload">&times;</div>
+			<h2><span>Accept UA</span></h2>
+			<div class="popup_about__txt _scroll">
+				<h3>Accept UA Accept UA Accept UA</h3>
+				<h4>Early years (2008–2011)</h4>
+				<p>In 2008, lead singer Dan Reynolds met drummer Andrew Tolman at Brigham Young University where they were both students.[9] Reynolds and Tolman added Andrew Beck, Dave Lemke, and Aurora Florence to play guitar, bass, and piano for their band. Their name is an anagram for a phrase only known to members of the group, that Reynolds stated each member approved of. The five-piece released an extended play titled Speak to Me that same year. Beck and Florence would also depart from the band's line-up that year. In 2009, Tolman recruited longtime high school friend Wayne Sermon, who had graduated from Berklee College of Music to play guitar. Tolman later recruited his wife, Brittany Tolman, to sing backup and play keys. Lemke left the band later on, leading Sermon to recruit another Berklee music student, Ben McKee, to join the band as their bassist and complete the lineup.[10][11] The band garnered a large following in their hometown of Provo, Utah, before the members moved to Las Vegas, the hometown of Dan Reynolds, where the band recorded and released their first three EPs.</p>
+				<h4>Lorem ipsum dolor minima corporis assumenda!</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae eaque suscipit saepe optio vero ex, quibusdam beatae voluptatem, excepturi quo repellat fugit? Alias, minus, maxime.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolorum quod, beatae amet et cumque rerum qui eos, quos ex, quia. Nam blanditiis velit mollitia necessitatibus repellat adipisci nesciunt quam omnis illo quo, ea dolore voluptatibus beatae libero vel dignissimos corporis, earum quidem aliquam ex quaerat asperiores. Porro ex fugiat odio quidem voluptatum dicta possimus praesentium asperiores provident repudiandae tempora ea, error hic, quis. Autem beatae, quae ducimus optio reprehenderit placeat laboriosam cupiditate incidunt veniam velit iure quod voluptatum eaque cum, perspiciatis distinctio maiores quaerat quo in laudantium. Culpa, illo!</p>
+			</div>
+		</div>
+
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="vendor/jquery-3.1.1.min"><\/script>')</script>
 		<script src="vendor/rangeSlider/rangeslider.min.js"></script>
         <script src="vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
-        <script src="vendor/jquery.nicefileinput.min.js"></script>
+        <script src="vendor/dropzone/dropzone.min.js"></script>
         <script src="vendor/jquery.tablesorter.min.js"></script>
 		<script src="vendor/jquery.validate.min.js"></script>
 		<script src="vendor/datedropper/datedropper.min.js"></script>

@@ -46,7 +46,7 @@ $(document).ready(function(){
 		a.addClass('_current').siblings().removeClass('_current');
 		body.removeClass('_active');
 		head.removeClass('_active');
-		input.val(text);
+		input.val(text).parent('.g_select').removeClass('_error');
 		head.find('span').text(text);
 	});
 	//popup tabs
@@ -103,7 +103,8 @@ $(document).ready(function(){
 	});
 	$('._open_pop').click(function(e){
 		e.preventDefault();
-		var name = $(this).data('name'),
+		var el = $(this),
+			name = el.data('name'),
 			popup = $('.popup_'+name),
 			popup_h = popup.outerHeight(),
 			popup_w = popup.outerWidth(),
@@ -136,11 +137,21 @@ $(document).ready(function(){
 				'margin-left': '-'+ popup_w/2 +'px'
 			});
 		}
+		if(name=="ua"){
+			$(this).closest('.popup').removeClass('_visible');
+		}
 		$('.popup.popup_'+name+' .popup__fields').scrollTop(0);
 	});
-	$('.overlay, ._close_pop, ._close_popup').click(function(e){
+	$('.overlay').click(function(e){
 		e.preventDefault();
 		$('.popup, .overlay').removeClass('_visible');
+	});
+	$('._close_pop, ._close_popup').click(function(e){
+		e.preventDefault();
+		$(this).closest('.popup').removeClass('_visible');
+		if($('.popup._visible').length==0){
+			$('.overlay').removeClass('_visible');
+		}
 	});
 
 	//popup login artist/listener fields change
@@ -201,7 +212,6 @@ $(document).ready(function(){
 
 
 	//table numbers
-
 	$('tbody').each(function(){
 		var n = 0;
 		$(this).find('.t_number').each(function(){
@@ -237,7 +247,7 @@ $(document).ready(function(){
 	});
 
 	//validate
-	$("form").each(function () {
+	$("._validate").each(function () {
 		var it = $(this);
 		it.validate({
 			rules: {
@@ -266,6 +276,77 @@ $(document).ready(function(){
 				$(element).removeClass('_error');
 			}
 		});
+	});
+
+	var uploadForm = $('.popup_upload__form');
+	(function(){
+		var it = uploadForm;
+		it.validate({
+			rules: {
+				name: {required: true},
+				genre: {required: true},
+				mood: {required: true},
+				explicit: {required: false},
+				language: {required: true},
+				accepted: {required: true}
+			},
+			messages: {},
+			errorPlacement: function (error, element) {},
+			submitHandler: function (form) {
+				$.ajax({
+					type: "POST",
+					url: "../mail.php",
+					data: it.serialize()
+				}).done(function () {
+
+				});
+				return false;
+			},
+			success: function () {},
+			highlight: function (element, errorClass) {
+				$(element).addClass('_error');
+				if($(element).parent('.g_select').length){
+					$(element).parent('.g_select').addClass('_error');
+				}
+			},
+			unhighlight: function (element, errorClass, validClass) {
+				$(element).removeClass('_error');
+				if($(element).parent('.g_select').length){
+					$(element).parent('.g_select').removeClass('_error');
+				}
+			}
+		});
+	})();
+	uploadForm.dropzone({
+		url: "/",
+		maxFiles: 1,
+		previewsContainer: uploadForm.find('.g_upload__info')[0],
+		previewTemplate: '<div class="g_upload__item"><div class="g_upload__item_name" data-dz-name></div><small data-dz-size></small><span class="g_upload__item_progress" data-dz-uploadprogress></span><i data-dz-remove>&times;</i></div>',
+		clickable: uploadForm.find('.g_upload')[0],
+		acceptedFiles: '.mp3,.flac',
+		init: function() {
+			this.on("maxfilesexceeded", function(file) {
+				this.removeAllFiles();
+				this.addFile(file);
+			});
+			this.on("addedfile", function() {
+				if (this.files[1]!=null){
+					this.removeFile(this.files[0]);
+				}
+			});
+			this.on('dragleave drop',function(){
+				uploadForm.removeClass('_over');
+			});
+			this.on('dragover',function(){
+				uploadForm.addClass('_over');
+			});
+		}
+	});
+	uploadForm.on('dragleave drop',function(){
+		uploadForm.removeClass('_over');
+	});
+	uploadForm.on('dragover',function(){
+		uploadForm.addClass('_over');
 	});
 
 	//footer volume
@@ -305,18 +386,6 @@ $(document).ready(function(){
 		$('.menu__filter').css('max-height',distance+'px');
 		$('._scroll').perfectScrollbar('update');
 	});
-
-	//file input
-	if($('input[type=file]').length){
-
-		$("input[type=file]").each(function(){
-			var el = $(this),
-				text = el.data('text');
-			el.nicefileinput({
-				label : text
-			});
-		});
-	}
 
 	//play/pause animation
 	$(".play_event").click(function() {
