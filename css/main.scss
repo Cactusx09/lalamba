@@ -277,6 +277,12 @@ b{
 				font-size: 0.66rem;
 			}
 		}
+		&._active{
+			+small{
+				transform: translateY(-27px) translateX(-15px);
+				font-size: 0.66rem;
+			}
+		}
 		&._error{
 			border-color: $r !important;
 		}
@@ -451,6 +457,19 @@ b{
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
+		position: relative;
+		&_thumb{
+			position: absolute;
+			left: 0;
+			z-index: 3;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			border: 2px solid  $g;
+		}
 		p{
 			font-weight: 700;
 			color: #fff;
@@ -2149,7 +2168,7 @@ b{
 		}
 	}
 	&_user{
-		padding-bottom: 15px;
+		text-align: center;
 		&__img{
 			width: 100px;
 			height: 100px;
@@ -2163,14 +2182,65 @@ b{
 		}
 		h5{
 			font-weight: 700;
-			margin-top: 35px;
 			margin-bottom: 5px;
 			+.g_input{
-				padding-top: 20px;
+				margin-top: 25px;
 			}
 		}
 		.g_label{
 			margin-top: 15px;
+			display: block;
+			text-align: left;
+			margin-bottom: 35px;
+		}
+		.g_upload{
+			margin-top: 20px;
+			text-align: left;
+			&__zone{
+				min-width: 130px;
+				height: 130px;
+			}
+			h6{
+				margin-bottom: 5px;
+				margin-top: 0;
+			}
+		}
+		.popup__fields{
+			.g_upload__info{
+				width: 200px;
+			}
+			&:before{
+				width: 100%;
+				height: 100%;
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				text-align: center;
+				font-size: 2rem;
+				color: #ccc;
+				z-index: -5;
+				background-color: rgba($g, 0.39);
+				opacity: 0;
+			}
+		}
+		.popup__btn{
+			margin-left: 0;
+			&._outline{
+				margin-left: auto;
+				margin-right: 20px;
+			}
+		}
+		&__form{
+			position: relative;
+			&._over{
+				.popup__fields{
+					&:before{
+						z-index: 5;
+						opacity: 1;
+					}
+				}
+			}
 		}
 	}
 	&_still{

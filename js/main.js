@@ -277,7 +277,7 @@ $(document).ready(function(){
 			}
 		});
 	});
-
+	///add track form
 	var uploadForm = $('.popup_upload__form');
 	(function(){
 		var it = uploadForm;
@@ -348,6 +348,80 @@ $(document).ready(function(){
 	uploadForm.on('dragover',function(){
 		uploadForm.addClass('_over');
 	});
+
+	//change user info form
+	///add track form
+	var userForm = $('.popup_user__form');
+	(function(){
+		var it = userForm;
+		it.validate({
+			rules: {
+
+			},
+			messages: {},
+			errorPlacement: function (error, element) {},
+			submitHandler: function (form) {
+				$.ajax({
+					type: "POST",
+					url: "../mail.php",
+					data: it.serialize()
+				}).done(function () {
+
+				});
+				return false;
+			},
+			success: function () {},
+			highlight: function (element, errorClass) {
+				$(element).addClass('_error');
+			},
+			unhighlight: function (element, errorClass, validClass) {
+				$(element).removeClass('_error');
+			}
+		});
+	})();
+	userForm.dropzone({
+		url: "/",
+		maxFiles: 1,
+		previewsContainer: userForm.find('.g_upload__info')[0],
+		previewTemplate: '<div class="g_upload__item"><div class="g_upload__item_name" data-dz-name></div><small data-dz-size></small><span class="g_upload__item_progress" data-dz-uploadprogress></span><i data-dz-remove>&times;</i></div>',
+		clickable: userForm.find('.g_upload')[0],
+		acceptedFiles: '.jpg,.jpeg,.png',
+		init: function() {
+			this.on("maxfilesexceeded", function(file) {
+				this.removeAllFiles();
+				this.addFile(file);
+			});
+			this.on("addedfile", function(file) {
+				if (this.files[1]!=null){
+					this.removeFile(this.files[0]);
+				}
+			});
+			this.on("removedfile", function(file) {
+				userForm.find('.g_upload__zone_thumb').css({
+					'background-image':'url("")'
+				});
+			});
+			this.on('dragleave drop',function(){
+				userForm.removeClass('_over');
+			});
+			this.on('dragover',function(){
+				userForm.addClass('_over');
+			});
+		},
+		thumbnail: function(file, dataUrl) {
+			userForm.find('.g_upload__zone_thumb').css({
+				'background-image':'url("'+dataUrl+'")'
+			});
+		}
+	});
+	userForm.on('dragleave drop',function(){
+		userForm.removeClass('_over');
+	});
+	userForm.on('dragover',function(){
+		userForm.addClass('_over');
+	});
+
+
 
 	//footer volume
 	var wrap = $('.footer__volume'),
