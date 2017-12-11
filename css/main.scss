@@ -2095,6 +2095,61 @@ b{
 			font-size: 1.063rem;
 			text-transform: uppercase;
 		}
+		&__copy{
+			color: $b;
+			display: block;
+			margin-top: 30px;
+			font-size: 1rem;
+			&._copy{
+				pointer-events: none;
+				small{
+					transform: none;
+					opacity: 1;
+				}
+			}
+			i{
+				margin-left: 20px;
+				cursor: pointer;
+				margin-right: -30px;
+				position: relative;
+			}
+			&:hover{
+				color: $g;
+				i{
+					path{
+						fill: $r;
+					}
+					polygon{
+						fill: $g;
+					}
+					rect{
+						fill: $b;
+					}
+				}
+				span{
+					border-color: $r;
+				}
+			}
+			small{
+				position: absolute;
+				left: 4px;
+				top: -2px;
+				width: 26px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 50%;
+				height: 27px;
+				background-color: #fff;
+				padding-top: 1px;
+				transform: scale(.3);
+				opacity: 0;
+				transition: $t*1.5;
+			}
+			span{
+				border-bottom: 1px solid  $g;
+			}
+		}
 		&__txt{
 			padding-bottom: 10px;
 			padding-left: 0;

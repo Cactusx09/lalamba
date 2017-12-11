@@ -30,6 +30,25 @@ $(document).ready(function(){
 			$(this).next().addClass('_active');
 		}
 	});
+
+	//add track btn copy
+	$('.popup_like__copy').click(function(e){
+		e.preventDefault();
+		var el = $(this);
+		copyToClipboard(el);
+		el.addClass('_copy');
+		setTimeout(function(){
+			el.removeClass('_copy');
+		},1500);
+	});
+	function copyToClipboard(element) {
+		var $temp = $("<input>");
+		$("body").append($temp);
+		$temp.val($(element).text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+	}
+
 	//select
 	$('.g_select__head').click(function(){
 		var head = $(this),
