@@ -1,5 +1,6 @@
 $(document).ready(function(){
-	$('.header__hamb').click(function(){
+	$('.header__hamb').click(function(e){
+		e.stopPropagation();
 		var hamb = $(this),
 			wrap = $('.main_wrp'),
 			btns = $('.s_btns'),
@@ -22,6 +23,29 @@ $(document).ready(function(){
 		hamb.toggleClass('_close');
 		menu.toggleClass('_active');
 	});
+	$('.menu, .popup_message, .header__login, .overlay').click(function(e){
+		e.stopPropagation();
+	});
+
+	$(window).click(function(){
+		var hamb = $('.header__hamb'),
+			wrap = $('.main_wrp'),
+			btns = $('.s_btns'),
+			menu = $('.menu'),
+			playlist = $('.playlist'),
+			width = menu.outerWidth(),
+			a = $('.menu__tabs').offset().top,
+			b = $('.menu__bot').offset().top,
+			distance = Math.abs(a - b)-30;
+		$('.menu__filter').css('max-height',distance+'px');
+		$('._scroll').perfectScrollbar('update');
+		playlist.removeClass('_active');
+		wrap.css('transform','none');
+		btns.css('transform','none');
+		hamb.removeClass('_close');
+		menu.removeClass('_active');
+	});
+
 	//inputs
 	$('.g_input input, .g_input textarea').change(function(){
 		if($(this).val()==''){
