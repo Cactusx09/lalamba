@@ -573,6 +573,26 @@ b{
 		background-color: rgba(0, 0, 0, 0.6);
 		z-index: -1;
 	}
+	&__img{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		z-index: -2;
+		transition: $t*7;
+		opacity: 0;
+		visibility: hidden;
+		transform: scale(1.2);
+		&._current{
+			opacity: 1;
+			visibility: visible;
+			transform: none;
+		}
+	}
 }
 .header{
 	padding: 28px 28px 28px 30px;

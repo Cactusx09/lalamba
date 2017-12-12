@@ -517,6 +517,15 @@ $(document).ready(function(){
 		tr.toggleClass('_active').siblings().removeClass('_active');
 	});
 
+	//next btn
+	$('.s_btns__next').click(function(){
+		$('.g_wrp__img._current').removeClass('_current')
+			.next().addClass('_current');
+		setTimeout(function(){
+			//now you can refresh link for next track
+		},1100);
+	});
+
 	//rating open
 	$('.s_text__info_num').click(function(){
 		$('.rating').addClass('_active');
