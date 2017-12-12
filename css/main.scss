@@ -1394,7 +1394,7 @@ b{
 		margin-top: 47px;
 		display: none;
 		&._current{
-			display: flex;
+			display: table;
 		}
 		&_wrp{
 			max-height: calc(100% - 100px);
@@ -1535,12 +1535,12 @@ b{
 				}
 			}
 			&.t_img{
+				min-width: 88px;
 				width: 88px;
 			}
 			&.t_track{
 				width: 20%;
 				padding-right: 20px;
-				margin-left: auto;
 			}
 			&.t_artist{
 				width: 18%;
@@ -2033,7 +2033,9 @@ b{
 		bottom: 10px;
 		width: 430px;
 		z-index: 999;
+		pointer-events: none;
 		&__item{
+			pointer-events: all;
 			padding: 0 25px;
 			transition: $t;
 			display: flex;
@@ -2569,6 +2571,10 @@ b{
 		padding-right: 10px;
 		padding-left: 10px;
 	}
+	.rating__table th.t_img, .rating__table td.t_img, .playlist__table th.t_img, .playlist__table td.t_img {
+		min-width: 68px;
+		width: 68px;
+	}
 }
 @media only screen and (max-width: 1199.5px) {
 	.s_text{
@@ -3037,14 +3043,8 @@ b{
 			top: 0;
 			bottom: inherit;
 			border-radius: 0;
-			padding-top: 33px;
+			padding-top: 52px;
 			overflow: hidden;
-			._close_pop{
-				right: 7px;
-    			top: 7px;
-				color: #485465;
-
-			}
 		}
 	}
 
