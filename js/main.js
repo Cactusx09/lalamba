@@ -23,7 +23,7 @@ $(document).ready(function(){
 		hamb.toggleClass('_close');
 		menu.toggleClass('_active');
 	});
-	$('.menu, .popup_message, .header__login, .overlay').click(function(e){
+	$('.menu, .popup_message, .header__login, .overlay,.playlist,.rating').click(function(e){
 		e.stopPropagation();
 	});
 
@@ -552,7 +552,10 @@ $(document).ready(function(){
 	});
 	//playlist tabs
 	$('.playlist__head a').click(function(){
-		$(this).addClass('_current').siblings().removeClass('_current');
+		var el = $(this),
+			n = el.index();
+		el.addClass('_current').siblings().removeClass('_current');
+		$('.playlist__table').eq(n).addClass('_current').siblings().removeClass('_current');
 	});
 	//playlist remove track
 	$('.playlist__table .t_del').click(function(){

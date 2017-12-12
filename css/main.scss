@@ -1078,7 +1078,8 @@ b{
 			cursor: pointer;
 			user-select: none;
 			color: rgba(255, 255, 255, 0.5);
-			font-weight: 700;
+			font-weight: 600;
+			letter-spacing: .5px;
 			position: relative;
 			&:before{
 				content: '';
@@ -1391,6 +1392,10 @@ b{
 	&__table{
 		width: 100%;
 		margin-top: 47px;
+		display: none;
+		&._current{
+			display: flex;
+		}
 		&_wrp{
 			max-height: calc(100% - 100px);
 			position: relative;
