@@ -551,7 +551,15 @@ $(document).ready(function(){
 		$('.playlist__table_wrp').perfectScrollbar();
 	});
 	//playlist sorting
-	$('.playlist__table').tablesorter({
+	$('.playlist__table_my').tablesorter({
+		cssHeader: 'table_header',
+		headers: {
+			9: {
+				sorter: false
+			}
+		}
+	});
+	$('.playlist__table_item').tablesorter({
 		cssHeader: 'table_header',
 		headers: {
 			8: {
@@ -639,6 +647,46 @@ $(document).ready(function(){
 		$('.rating__table_wrp').perfectScrollbar('update');
 	});
 });
+
+//mobile hover disable
+function getMobileOperatingSystem() {
+	var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+	// Windows Phone must come first because its UA also contains "Android"
+	if (/windows phone/i.test(userAgent)) {
+		return "Windows Phone";
+	}
+
+	if (/android/i.test(userAgent)) {
+		return "Android";
+	}
+
+	// iOS detection from: http://stackoverflow.com/a/9039885/177710
+	if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+		return "iOS";
+	}
+
+	return null;
+}
+
+if (getMobileOperatingSystem()) {
+	try {
+		for (var si in document.styleSheets) {
+			var styleSheet = document.styleSheets[si];
+			if (!styleSheet.rules) continue;
+
+			for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+				if (!styleSheet.rules[ri].selectorText) continue;
+
+				if (styleSheet.rules[ri].selectorText.match(':hover')) {
+					styleSheet.deleteRule(ri);
+				}
+			}
+		}
+	} catch (ex) {}
+}
+
+
 //var path = document.getElementsByClassName('.g_wrp').getAttribute("style");
 //
 //var img = new Image();                            // load an image

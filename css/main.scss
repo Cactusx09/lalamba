@@ -671,6 +671,7 @@ b{
 		height: 43px;
 		@extend ._flex_c_c;
 		border-radius: 1px;
+		cursor: pointer;
 		position: relative;
 		border: solid 1px rgba(255, 255, 255, 0.2);
 		span{
@@ -915,6 +916,7 @@ b{
 		margin-right: 15px;
 		border: 2px solid  #fff;
 		position: relative;
+		cursor: pointer;
 		small{
 			position: absolute;
 			top: -27px;
@@ -1320,6 +1322,7 @@ b{
 		a{
 			@extend ._flex_fs_c;
 			margin-bottom: 25px;
+			cursor: pointer;
 //			&:not(:last-of-type){
 //				margin-bottom: 25px;
 //			}
@@ -1380,6 +1383,7 @@ b{
 			position: relative;
 			font-weight: 600;
 			z-index: 5555;
+			cursor: pointer;
 			&:before{
 				content: '';
 				position: absolute;
@@ -1421,6 +1425,9 @@ b{
 			position: relative;
 			.ps-scrollbar-y-rail{
 				margin-top: 47px;
+			}
+			.no-tracks{
+				text-align: center !important;
 			}
 		}
 		thead{
@@ -1505,6 +1512,9 @@ b{
 		tbody{
 			tr{
 				border-bottom: 1px solid rgba(239, 239, 239, 0.1);
+				display: flex;
+				align-items: center;
+				padding: 7px 0;
 				&:hover{
 					box-shadow: 0 3px 24px 0 rgba(0, 0, 0, 0.15);
 					position: relative;
@@ -1521,20 +1531,26 @@ b{
 				}
 				&._active{
 					background-color: $g;
+					td{
+						&:nth-of-type(1){
+							.play-button{
+								transform: none;
+							}
+							>span{
+								transform: scale(0);
+							}
+						}
+					}
 				}
 			}
 			td{
-				height: 60px;
 				vertical-align: middle;
 				transition: $t;
 			}
 		}
 		th,td{
-			&:last-of-type{
-				padding-right: .5vw;
-			}
 			&.t_number{
-				width: 7%;
+				min-width: 6%;
 				padding-left: 2.5vw;
 				position: relative;
 				>span{
@@ -1544,7 +1560,7 @@ b{
 				.play-button{
 					position: absolute;
 					left: 2.27vw;
-					top: 20px;
+					top: -1px;
 					transform: scale(0);
 					transition: $t;
 					cursor: pointer;
@@ -1556,30 +1572,36 @@ b{
 			}
 			&.t_img{
 				min-width: 88px;
-				width: 88px;
+				max-width: 88px;
 			}
 			&.t_track{
-				width: 20%;
+				min-width: 20%;
+				max-width: 20%;
 				padding-right: 20px;
 			}
 			&.t_artist{
-				width: 18%;
+				min-width: 18%;
+				max-width: 18%;
 				padding-right: 20px;
 			}
 			&.t_genre{
-				width: 12%;
+				min-width: 12%;
+				max-width: 12%;
 				padding-right: 20px;
 			}
 			&.t_lang{
-				width: 11%;
+				min-width: 11%;
+				max-width: 11%;
 				padding-right: 20px;
 			}
 			&.t_mood{
-				width: 12%;
+				min-width: 12%;
+				max-width: 12%;
 				padding-right: 20px;
 			}
 			&.t_rank{
-				width: 10%;
+				min-width: 10%;
+				max-width: 10%;
 				padding-right: 20px;
 				small{
 					font-size: .1em;
@@ -1590,15 +1612,18 @@ b{
 				}
 			}
 			&.t_del{
+				margin-right: 1.4vw;
+				margin-left: auto;
 				&._active{
 					path{
 						fill: $r;
-						stroke: $r;
 						stroke-width: 0.5px;
 					}
 				}
 				svg{
 					cursor: pointer;
+					width: 22px;
+					height: auto;
 				}
 				&:hover{
 					path{
@@ -1606,6 +1631,51 @@ b{
 						opacity: 1;
 					}
 				}
+			}
+
+			//my uploaded tracks
+			&.t_action{
+				margin-left: auto;
+				margin-right: 1.4vw;
+				display: flex;
+				align-items: center;
+				min-width: 60px;
+				max-width: 60px;
+				.t_action{
+					&__shuffle{
+						padding-left: 11px;
+						&._active{
+							g{
+								fill: $r;
+								stroke-width: 0.5px;
+							}
+						}
+					}
+					&__edit{
+						cursor: pointer;
+						order: -1;
+						margin-right: 10px;
+					}
+					&__del{
+						cursor: pointer;
+						&:hover{
+							path{
+								fill: $r;
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+			&.t_expl{
+				min-width: 6%;
+				max-width: 6%;
+				color: rgba(255, 255, 255, 0.5);
+			}
+			&.t_added{
+				padding-left: 2.5%;
+				max-width: 10.6%;
+				min-width: 10.6%;
 			}
 		}
 		td{
@@ -1626,6 +1696,23 @@ b{
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: center;
+		}
+
+		&_my{
+			th,td{
+				&.t_track{
+					min-width: 15%;
+					max-width: 15%;
+				}
+				&.t_artist{
+					min-width: 13%;
+					max-width: 13%;
+				}
+				&.t_lang{
+					min-width: 12%;
+					max-width: 12%;
+				}
+			}
 		}
 	}
 	&__btn{
@@ -1913,6 +2000,7 @@ b{
 			a{
 				color: #485465;
 				font-weight: 700;
+				cursor: pointer;
 				&:hover{
 					color: $g;
 				}
@@ -1920,6 +2008,7 @@ b{
 		}
 		&__share{
 			a{
+				cursor: pointer;
 				path{
 					transition: $t*10;
 				}
@@ -2059,7 +2148,7 @@ b{
 		right: 10px;
 		bottom: 10px;
 		width: 430px;
-		z-index: 999;
+		z-index: 10050;
 		pointer-events: none;
 		&__item{
 			pointer-events: all;
@@ -2602,6 +2691,46 @@ b{
 		min-width: 68px;
 		width: 68px;
 	}
+	.rating,
+	.playlist{
+		&__table{
+			&_my{
+				td,th{
+					&.t_lang{
+						min-width: 10%;
+						max-width: 10%;
+					}
+					&.t_mood{
+						min-width: 9%;
+						max-width: 9%;
+					}
+					&.t_added{
+						min-width: 12%;
+						max-width: 12%;
+					}
+					&.t_action{
+						svg{
+							width: 20px;
+						}
+					}
+				}
+				td{
+					&.t_added{
+						font-size: .8rem;
+					}
+				}
+			}
+			thead{
+				th{
+					font-size: .95rem;
+				}
+			}
+			td{
+				font-size: .85rem;
+
+			}
+		}
+	}
 }
 @media only screen and (max-width: 1199.5px) {
 	.s_text{
@@ -2619,16 +2748,16 @@ b{
 			th,
 			td{
 				&.t_img{
-					width: 10%;
+//					width: 10%;
 				}
 				&.t_artist{
-					width: 16%;
+					min-width: 13%;
 				}
 				&.t_genre{
-					width: 12%;
+//					width: 12%;
 				}
 				&.t_lang{
-					width: 15%;
+//					width: 15%;
 				}
 			}
 		}
@@ -2751,15 +2880,16 @@ b{
 			td,
 			th{
 				&.t{
-					&_artist,
 					&_genre,
 					&_lang,
 					&_mood,
+					&_added,
+					&_expl,
 					&_rank{
 						display: none;
 					}
 					&_number{
-						width: 50px;
+						min-width: 50px;
 						padding: 0 10px;
     					text-align: center;
 						.play-button{
@@ -2769,8 +2899,14 @@ b{
 					&_img{
 						width: 68px;
 					}
+					&_artist{
+						min-width: calc(30%  -  58px) !important;
+						max-width:  calc(30%  -  58px) !important;
+					}
 					&_track{
-						width: calc(100%  -  158px) !important;
+						min-width: 0;
+						max-width: calc(100% - 190px);
+						flex-grow: 2;
 					}
 					&_del{
 						width: 40px;
@@ -3022,6 +3158,16 @@ b{
 		}
 
 //
+	}
+	.playlist,
+	.rating{
+		&__table{
+			td,th{
+				&.t_artist{
+					display: none;
+				}
+			}
+		}
 	}
 	.playlist{
 		&__head{
