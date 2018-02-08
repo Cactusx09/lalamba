@@ -171,6 +171,24 @@ $b: #4a90e2;
 b{
 	font-weight: 700;
 }
+.g_preloader{
+    position: fixed;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99999;
+    transition: $t*9;
+    background-color: #141414;
+    background-image: url('../images/preloader.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200px;
+    &._hide{
+        opacity: 0;
+    }
+}
 .g_radio{
 	position: absolute;
 	z-index: -1000;

@@ -733,6 +733,21 @@ if (getMobileOperatingSystem()) {
 	} catch (ex) {}
 }
 
+//preloader
+function preloader(){
+    setTimeout(function(){
+        $('.g_preloader').addClass('_hide');
+        setTimeout(function(){
+            $('.g_preloader').remove();
+        },1500);
+    },1500);
+}
+//onload event
+window.addEventListener ?
+    window.addEventListener("load",preloader,false)
+:
+window.attachEvent && window.attachEvent("onload",preloader);
+
 
 //var path = document.getElementsByClassName('.g_wrp').getAttribute("style");
 //
