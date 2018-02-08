@@ -106,7 +106,7 @@ $(document).ready(function(){
 			popup_h = popup.outerHeight(),
 			popup_w = popup.outerWidth(),
 			h = $(window).height(),
-			px = window.pageYOffset + h/2 - popup_h/2;
+			px = h/2 - popup_h/2;
 		popup.css({
 			'top': px+'px',
 			'margin-left': '-'+ popup_w/2 +'px'
@@ -126,7 +126,7 @@ $(document).ready(function(){
 			popup_h = popup.outerHeight(),
 			popup_w = popup.outerWidth(),
 			h = $(window).height(),
-			px = window.pageYOffset + h/2 - popup_h/2;
+			px = h/2 - popup_h/2;
 		popup.css({
 			'top': px+'px',
 			'margin-left': '-'+ popup_w/2 +'px'
@@ -135,14 +135,17 @@ $(document).ready(function(){
 	});
 
 	//popups
-	var popup = $('.popup'),
-		popup_h = popup.outerHeight(),
-		popup_w = popup.outerWidth(),
-		h = $(window).height(),
-		px = window.pageYOffset + h/2 - popup_h/2;
-	popup.css({
-		'top': px+'px',
-		'margin-left': '-'+ popup_w/2 +'px'
+
+    $('.popup').each(function(){
+        var popup = $(this),
+            popup_h = popup.outerHeight(),
+            popup_w = popup.outerWidth(),
+            h = $(window).height(),
+            px = h/2 - popup_h/2;
+        popup.css({
+            'top': px+'px',
+            'margin-left': '-'+ popup_w/2 +'px'
+        });
 	});
 	$('._open_pop').click(function(e){
 		e.preventDefault();
@@ -152,7 +155,7 @@ $(document).ready(function(){
 			popup_h = popup.outerHeight(),
 			popup_w = popup.outerWidth(),
 			h = $(window).height(),
-			px = window.pageYOffset + h/2 - popup_h/2;
+			px = h/2 - popup_h/2;
 		popup.css({
 			'top': px+'px',
 			'margin-left': '-'+ popup_w/2 +'px'
@@ -174,7 +177,7 @@ $(document).ready(function(){
 				popup_h = popup.outerHeight(),
 				popup_w = popup.outerWidth(),
 				h = $(window).height(),
-				px = window.pageYOffset + h/2 - popup_h/2;
+				px = h/2 - popup_h/2;
 			popup.css({
 				'top': px+'px',
 				'margin-left': '-'+ popup_w/2 +'px'
@@ -213,7 +216,7 @@ $(document).ready(function(){
 			popup_h = popup.outerHeight(),
 			popup_w = popup.outerWidth(),
 			h = $(window).height(),
-			px = window.pageYOffset + h/2 - popup_h/2;
+			px = h/2 - popup_h/2;
 		popup.css({
 			'top': px+'px',
 			'margin-left': '-'+ popup_w/2 +'px'
@@ -240,7 +243,7 @@ $(document).ready(function(){
 				popup_h = popup.outerHeight(),
 				popup_w = popup.outerWidth(),
 				h = $(window).height(),
-				px = window.pageYOffset + h/2 - popup_h/2;
+				px = h/2 - popup_h/2;
 			popup.css({
 				'top': px+'px',
 				'margin-left': '-'+ popup_w/2 +'px'
