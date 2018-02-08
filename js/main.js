@@ -44,7 +44,12 @@ $(document).ready(function(){
 		btns.css('transform','none');
 		hamb.removeClass('_close');
 		menu.removeClass('_active');
+        $('.popup_message__item').removeClass('_visible');
 	});
+    //prevent
+    $('.s_text__info_num, .s_btns, .s_text h1, .popup').click(function(e){
+        e.stopPropagation();
+    });
 
 	//inputs
 	$('.g_input input, .g_input textarea').change(function(){

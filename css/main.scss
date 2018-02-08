@@ -1762,7 +1762,9 @@ b{
 		}
 		th,td{
 			&.t_track{
-				width: 43%;
+				flex-grow: 2;
+                max-width: 48%;
+                min-width: 48%;
 				padding-right: 20px;
 				margin-left: auto;
 			}
