@@ -1014,12 +1014,19 @@ b{
 		@extend ._flex_fs_c;
 		overflow: hidden;
 		transition: width $t*1.2;
-		width: 31px;
+		width: 29px;
+        i{
+            margin-bottom: -3px;
+            path{
+                fill: #fff;
+                transition: $t;
+            }
+        }
 		&.footer__event_helper{
 			flex-grow: 0;
 		}
 		&._active{
-			width: 133px;
+			width: 143px;
 			path:first-of-type{
 				fill: $g;
 			}
