@@ -2247,13 +2247,15 @@ b{
 		}
 		&__copy{
 			color: $b;
-			display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 			margin-top: 30px;
 			font-size: 1rem;
 			&._copy{
 				pointer-events: none;
 				small{
-					transform: none;
+					transform: scale(.8);
 					opacity: 1;
 				}
 			}
@@ -2282,14 +2284,14 @@ b{
 			}
 			small{
 				position: absolute;
-				left: 4px;
-				top: -2px;
-				width: 26px;
+				left: 0;
+				top: 0;
+				width: 100%;
+                height: 100%;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				border-radius: 50%;
-				height: 27px;
 				background-color: #fff;
 				padding-top: 1px;
 				transform: scale(.3);
