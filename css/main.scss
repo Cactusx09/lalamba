@@ -1234,6 +1234,8 @@ b{
 	}
 	&__bot{
 		margin-top: auto;
+        position: relative;
+        z-index: 99;
 		&_upload{
 			background-color: transparent;
 			overflow: hidden;
@@ -2516,7 +2518,6 @@ b{
 	}
 	&__fields{
 		padding: 35px 25px 5px;
-		overflow-y: auto;
 		overflow-x: hidden;
 		border-bottom: 1px solid #cfd8dc;
 		>*{
@@ -2570,20 +2571,6 @@ b{
 		.popup__fields{
 			.g_upload__info{
 				width: 240px;
-			}
-			&:before{
-				width: 100%;
-				height: 100%;
-				content: '';
-				position: absolute;
-				left: 0;
-				top: 0;
-				text-align: center;
-				font-size: 2rem;
-				color: #ccc;
-				z-index: -5;
-				background-color: rgba($g, 0.39);
-				opacity: 0;
 			}
 		}
 		.popup__btn{
@@ -3217,6 +3204,7 @@ b{
 				font-size: 50px;
 			}
 		}
+        &_upload,
         &_user{
             .popup__btn{
                 margin-left: auto;
@@ -3269,7 +3257,9 @@ b{
                 margin-top: 1rem;
             }
         }
-        &_report{
+        &_report,
+        &_like,
+        &_upload{
             width: 100%;
             margin-left: 0 !important;
             left: 0 !important;
@@ -3277,6 +3267,20 @@ b{
             overflow: auto;
             height: 100vh;
             border-radius: 0;
+            ._close_pop{
+                top: 6px;
+                right: 6px;
+                z-index: 99;
+            }
+        }
+        &_like{
+            ._close_pop{
+                color: #485465;
+                top: 10px;
+                right: 10px;
+            }
+            padding-left: 20px;
+            padding-right: 20px;
         }
         &_reset{
             width: 100%;

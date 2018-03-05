@@ -148,7 +148,7 @@ $(document).ready(function(){
             h = $(window).height(),
             px = h/2 - popup_h/2;
         popup.css({
-            'top': px+'px',
+            'top': -px+'px',
             'margin-left': '-'+ popup_w/2 +'px'
         });
 	});
