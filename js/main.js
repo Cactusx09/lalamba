@@ -8,8 +8,8 @@ $(document).ready(function(){
 			playlist = $('.playlist'),
 			width = menu.outerWidth(),
 			a = $('.menu__tabs').offset().top,
-			b = $('.menu__bot').offset().top,
-			distance = Math.abs(a - b)-30;
+			b = $('.menu__bot').outerHeight(),
+			distance = $(window).outerHeight() - a - $('.menu__tabs').outerHeight() - b;
 		$('.menu__filter').css('max-height',distance+'px');
 		$('._scroll').perfectScrollbar('update');
 		if(!hamb.hasClass('_close')){
@@ -620,6 +620,7 @@ $(document).ready(function(){
 			n = el.index();
 		el.addClass('_current').siblings().removeClass('_current');
 		$('.playlist__table').eq(n).addClass('_current').siblings().removeClass('_current');
+        $('.playlist__table_wrp').perfectScrollbar('update');
 	});
 	//playlist remove track
 	$('.playlist__table .t_del').click(function(){
@@ -689,10 +690,14 @@ $(document).ready(function(){
 		$('.playlist').removeClass('_active');
 	});
 
-	$('.rating__filter').click(function(){
-		$('.rating').toggleClass('_trans');
-		$('.rating__table_wrp').perfectScrollbar('update');
-	});
+//	$('.rating__filter').click(function(){
+//		$('.rating').toggleClass('_trans');
+//		$('.rating__table_wrp').perfectScrollbar('update');
+//	});
+
+    if(getMobileOperatingSystem()!=null){
+        $('.footer__volume').remove();
+    }
 });
 
 //mobile hover disable

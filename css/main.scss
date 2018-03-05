@@ -1342,19 +1342,19 @@ b{
 		}
 	}
 	&__panel{
-		padding: 30px 20px;
+		padding: 20px 20px;
 		border-top: 1px solid  rgba(255, 255, 255, 0.1);
 		a{
 			@extend ._flex_fs_c;
-			margin-bottom: 25px;
 			cursor: pointer;
-//			&:not(:last-of-type){
-//				margin-bottom: 25px;
-//			}
+			&:not(:last-of-type){
+				margin-bottom: 20px;
+			}
 			i{
-				min-width: 35px;
+				min-width: 28px;
 				text-align: center;
-				margin-right: 6px;
+				margin-right: 5px;
+                margin-left: 3px;
 			}
 			span{
 				font-size: 0.88em;
@@ -1372,10 +1372,6 @@ b{
 					color: #fff;
 				}
 			}
-		}
-		.NFI-wrapper{
-			margin-bottom: 25px;
-			width: 201px;
 		}
 	}
 }
@@ -1576,7 +1572,7 @@ b{
 		th,td{
 			&.t_number{
 				min-width: 6%;
-				padding-left: 2.5vw;
+				padding-left: 1.5vw;
 				position: relative;
 				>span{
 					transition: $t*2;
@@ -1600,18 +1596,18 @@ b{
 				max-width: 88px;
 			}
 			&.t_track{
-				min-width: 20%;
-				max-width: 20%;
+				min-width: 23%;
+				max-width: 23%;
 				padding-right: 20px;
 			}
 			&.t_artist{
-				min-width: 18%;
-				max-width: 18%;
+				min-width: 19%;
+				max-width: 19%;
 				padding-right: 20px;
 			}
 			&.t_genre{
-				min-width: 12%;
-				max-width: 12%;
+				min-width: 10%;
+				max-width: 10%;
 				padding-right: 20px;
 			}
 			&.t_lang{
@@ -1625,8 +1621,8 @@ b{
 				padding-right: 20px;
 			}
 			&.t_rank{
-				min-width: 10%;
-				max-width: 10%;
+				min-width: 8%;
+				max-width: 8%;
 				padding-right: 20px;
 				small{
 					font-size: .1em;
@@ -1760,20 +1756,8 @@ b{
 		}
 	}
 	&__head{
-		&:first-of-type{
-			border-right: 2px solid  $r;
-		}
 		&_wrp{
 			@extend ._flex_fs_c;
-		}
-		hr{
-			margin-top: 0;
-			margin-bottom: 0;
-			height: 22px;
-			margin-right: 25px;
-			border: none;
-			min-width: 2px;
-			border-left: 3px solid $r;
 		}
 		a{
 			&:not(:last-of-type){
@@ -1791,12 +1775,9 @@ b{
                 max-width: 48%;
                 min-width: 48%;
 				padding-right: 20px;
-				margin-left: auto;
+				margin-right: auto;
 			}
 		}
-	}
-	&__filter{
-		display: none;
 	}
 }
 
@@ -1933,7 +1914,7 @@ b{
 			&_item{
 				@extend ._flex_c_c;
 				width: 50%;
-				height: 65px;
+				height: 53px;
 				padding-top: 6px;
 				font-size: 1.06em;
 				cursor: pointer;
@@ -2535,7 +2516,6 @@ b{
 	}
 	&__fields{
 		padding: 35px 25px 5px;
-		max-height: 50vh;
 		overflow-y: auto;
 		overflow-x: hidden;
 		border-bottom: 1px solid #cfd8dc;
@@ -2709,9 +2689,9 @@ b{
    _responsive
    ========================================================== */
 @media only screen and (max-width: 1599.5px) {
-	.rating__table th:last-of-type, .rating__table td:last-of-type, .playlist__table th:last-of-type, .playlist__table td:last-of-type {
-		 padding-right: 1.7vw;
-	}
+//	.rating__table th:last-of-type, .rating__table td:last-of-type, .playlist__table th:last-of-type, .playlist__table td:last-of-type {
+//		 padding-right: 1.7vw;
+//	}
 	.rating__table th.t_track, .rating__table td.t_track, .playlist__table th.t_track, .playlist__table td.t_track {
 		padding-right: 10px;
 		padding-left: 10px;
@@ -2767,12 +2747,23 @@ b{
 	}
 	.menu{
 		width: 290px;
+        &__tabs{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        &__filter{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
 	}
 	.playlist{
 		width: calc(100% - 290px);
 		&__table{
 			thead{
 				width: calc(100% - 290px);
+                th{
+                    font-size: 0.85rem;
+                }
 			}
 			th,
 			td{
@@ -2781,6 +2772,7 @@ b{
 				}
 				&.t_artist{
 					min-width: 13%;
+                    max-width: 13%;
 				}
 				&.t_genre{
 //					width: 12%;
@@ -2791,14 +2783,6 @@ b{
 			}
 		}
 
-	}
-	.rating{
-		&__head{
-			padding: 40px 20px;
-			a:not(:last-of-type) {
-				margin-right: 2vw;
-			}
-		}
 	}
 }
 @media only screen and (max-width: 991.5px) {
@@ -2820,27 +2804,6 @@ b{
 			 a:before{
 				bottom: -18px;
 			}
-		}
-	}
-	.rating{
-		padding-bottom: 20px;
-		&__table{
-			thead{
-				width: 100%;
-				margin-top: -20px;
-			}
-			&_wrp{
-				max-height: calc(100% - 60px);
-			}
-		}
-		&__head{
-			padding-bottom: 20px;
-			 a:before{
-				bottom: -18px;
-			}
-		}
-		&__close{
-			margin-top: 20px;
 		}
 	}
 	.popup_message{
@@ -2866,12 +2829,16 @@ b{
 			font-size: 38px;
 			small{
 				color: #fff;
-				transform: translateY(6px);
+                transform: none;
 				opacity: 1;
 				border-bottom: 2px solid $g;
 				line-height: 0.8em;
+                right: -100px;
 			}
 		}
+        &__info{
+            margin-bottom: 15px;
+        }
 	}
 	.s_btns{
 		margin-bottom: 5vh;
@@ -2889,16 +2856,12 @@ b{
 		font-size: 22px;
 		&__panel{
 			a i {
-    			min-width: 20px;
+    			min-width: 24px;
 				margin-left: -5px;
 			}
-			padding: 15px 20px;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			.NFI-wrapper{
-    			margin-bottom: 10px;
-			}
 		}
 	}
 	.rating,
@@ -2946,23 +2909,26 @@ b{
 	}
 	.rating{
 		transition: transform $t;
-		transform: translateY(-170px) translateZ(0);
-    	height: calc(100vh + 170px);
 		&__head{
-			padding: 10px 15px 3px;
+			padding: 12px 15px 4px;
 			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
+            align-items: center;
 			a{
 				text-align: left;
 				margin-bottom: 10px;
-				font-size: 1.1em;
+				font-size: 1.0em;
 				&:before{
 					bottom: -1px;
 				}
 				&._current:before{
 					height: 2px;
 				}
+                &:not(:last-of-type){
+                    margin-right: 16px;
+                }
+                span{
+                    display: none;
+                }
 			}
 		}
 		&__btn {
@@ -2970,33 +2936,27 @@ b{
 			right: 15px;
 		}
 
-		&._trans{
-			transform: translateY(0) translateZ(0);
-    		height: 100vh;
-			.rating{
-				&__table_wrp{
-					max-height: calc(100vh - 168px);
-				}
-				&__head a{
-					@for $n from 1 through 10{
-						&:nth-of-type(#{$n}){
-							animation: down $t*$n*1.6 !important;
-						}
-					}
-				}
-			}
-
-		}
-		&__head{
-			flex-direction: column;
-			&_wrp{
-				align-items: flex-start !important;
-				max-height: 100vh;
-			}
-		}
+//		&._trans{
+//			transform: translateY(0) translateZ(0);
+//    		height: 100vh;
+//			.rating{
+//				&__table_wrp{
+//					max-height: calc(100vh - 168px);
+//				}
+//				&__head a{
+//					@for $n from 1 through 10{
+//						&:nth-of-type(#{$n}){
+//							animation: down $t*$n*1.6 !important;
+//						}
+//					}
+//				}
+//			}
+//
+//		}
 		&__table{
 			thead{
-				margin-top: 67px;
+                top: 43px;
+				margin-top: 0;
 			}
 			&_wrp {
 				max-height: 100vh;
@@ -3006,7 +2966,7 @@ b{
 			margin-top: 0;
 			margin-right: 0;
 			position: fixed;
-			top: 178px;
+			top: 7px;
     		right: 9px;
 			z-index: 99;
 		}
@@ -3032,7 +2992,6 @@ b{
 			border-radius: 0;
 			&__txt{
 				max-height: calc(100vh  -  75px);
-
 			}
 			._close_pop{
 				top: 25px;
@@ -3050,9 +3009,6 @@ b{
 					margin-top: 33px;
 					border-top: 1px solid rgba(155,169,188,0.33);
 				}
-			}
-			&__tab{
-				padding-top: 30px;
 			}
 			._close_pop{
 				top: 5px;
@@ -3079,6 +3035,7 @@ b{
 			right: 15px;
 		}
 	}
+
 }
 //@media only screen and (max-height: 699.5px) {
 //	.popup_login__tab{
@@ -3117,29 +3074,27 @@ b{
 				margin-right: 20px;
 			}
 			&_name{
-				position: absolute;
-				bottom: -26px;
-				transform: translateX(-50%);
-				left: 50%;
-				margin-left: 0;
-				margin-right: 0;
+                display: none;
+//				position: absolute;
+//				bottom: -26px;
+//				transform: translateX(-50%);
+//				left: 50%;
+//				margin-left: 0;
+//				margin-right: 0;
 			}
 		}
 	}
 	.footer{
 		&__volume{
-			width: 100%;
-			&._active{
-				width: 100%;
-			}
+			display: none;
 		}
 		&__social{
 			padding: 13px 10px;
-			width: 37vh;
+			width: 100%;
 			display: flex;
-			justify-content: flex-end;
+			justify-content: center;
 			a:not(:last-of-type){
-				margin-right: 5px;
+				margin-right: 14px;
 			}
 			&._active{
 				transform: none;
@@ -3169,12 +3124,11 @@ b{
 			padding-top: 70px;
 		}
 		&__tabs{
-			padding: 0 15px 15px;
+			padding: 0 15px 14px;
 			flex-wrap: wrap;
 			&_item{
 				margin: 5px 0;
-				font-size: .85em;
-				width: 48%;
+				font-size: .9rem;
 				text-align: center;
 				&:before{
 					bottom: -1px;
@@ -3185,11 +3139,30 @@ b{
 			}
 
 		}
-
+        &__filter{
+            padding-top: 15px;
+            padding-bottom: 15px;
+            &_item{
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+                &:not(:last-of-type){
+                    margin-bottom: 1.2rem;
+                }
+                label{
+                    padding-top: 2px;
+                }
+            }
+        }
 //
 	}
 	.playlist,
 	.rating{
+        &__head{
+            a{
+                font-size: .9rem;
+                letter-spacing: 1px;
+            }
+        }
 		&__table{
 			td,th{
 				&.t_artist{
@@ -3200,10 +3173,15 @@ b{
 	}
 	.playlist{
 		&__head{
-			padding: 10px 15px;
-			a:not(:last-of-type) {
+			padding: 14px 15px 5px;
+			a:not(:last-of-type){
 				margin-right: 20px;
 			}
+            a{
+                &:before{
+                    bottom: -12px;
+                }
+            }
 		}
 		&__table{
 			&_wrp{
@@ -3211,7 +3189,7 @@ b{
 				max-height: calc(100% - 50px);
 			}
 			thead{
-				margin-top: 10px;
+				margin-top: 4px;
 			}
 		}
 		&__btn {
@@ -3236,9 +3214,38 @@ b{
 				width: 100%;
 			}
 			._close_pop{
-				font-size: 40px;
+				font-size: 50px;
 			}
 		}
+        &_user{
+            .popup__btn{
+                margin-left: auto;
+                &._outline{
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 15px;
+                    order: 2;
+                }
+            }
+            .g_upload{
+                flex-direction: column;
+                &__zone{
+                    margin-right: 0;
+                    margin-bottom: 12px;
+                }
+                &__info{
+                    width: 100% !important;
+                }
+            }
+        }
+        &_login{
+            &__share{
+                svg{
+                    margin-right: 8px;
+                    margin-left: 8px;
+                }
+            }
+        }
 		&_message{
 			width: 100%;
 			right: 0;
@@ -3248,6 +3255,64 @@ b{
 			padding-top: 52px;
 			overflow: hidden;
 		}
+        &__bot{
+            flex-direction: column;
+        }
+        &__btn{
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+        &_login{
+            &__share{
+                order: 2;
+                margin-top: 1rem;
+            }
+        }
+        &_report{
+            width: 100%;
+            margin-left: 0 !important;
+            left: 0 !important;
+            top: 0 !important;
+            overflow: auto;
+            height: 100vh;
+            border-radius: 0;
+        }
+        &_reset{
+            width: 100%;
+            margin-left: 0 !important;
+            left: 0 !important;
+            top: 0 !important;
+            overflow: auto;
+            height: 100vh;
+            border-radius: 0;
+            h4{
+                font-size: 1.4rem;
+            }
+            p{
+                margin-bottom: 1.2rem;
+                br{
+                    display: none;
+                }
+            }
+            &__form{
+                flex-direction: column;
+                .g_input{
+                    margin-bottom: 2rem;
+                    input{
+                        border-right: .063rem solid  #cfd8dc;
+                    }
+                }
+                button{
+                    border-radius: 3px !important;
+                }
+            }
+            ._close_pop{
+                top: 10px;
+                right: 10px;
+                color: #485465;
+            }
+        }
 	}
 
 }
