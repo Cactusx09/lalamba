@@ -621,11 +621,29 @@ b{
 	pointer-events: none;
 	&__logo{
 		pointer-events: all;
+        position: relative;
 		&:hover{
 			tspan{
 				fill: $r;
 			}
+            span{
+                transform: translateX(-66%);
+                opacity: 1;
+                pointer-events: all;
+            }
 		}
+        span{
+            position: absolute;
+            top: 100%;
+            margin-top: 3px;
+            left: 100%;
+            white-space: nowrap;
+            color: $g;
+            transition: $t;
+            transform: translateX(-96%) translateY(-15px);
+            opacity: 0;
+            pointer-events: none;
+        }
 	}
 	&__hamb{
 		margin-right: 40px;
@@ -1753,11 +1771,16 @@ b{
 		margin-right: 20px;
 		cursor: pointer;
 		font-weight: 700;
+        position: absolute;
+        top: 38px;
+        right: 31px;
+        z-index: 9;
 		&:hover{
 			color: $r;
 		}
 	}
 	&__head{
+        position: relative;
 		&_wrp{
 			@extend ._flex_fs_c;
 		}
@@ -2519,6 +2542,8 @@ b{
 	&__fields{
 		padding: 35px 25px 5px;
 		overflow-x: hidden;
+		overflow-y: auto;
+        max-height: 60vh;
 		border-bottom: 1px solid #cfd8dc;
 		>*{
 			margin-bottom: 30px;
