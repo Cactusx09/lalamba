@@ -742,6 +742,7 @@ if (getMobileOperatingSystem()) {
 function preloader(){
     setTimeout(function(){
         $('.g_preloader').addClass('_hide');
+        $('body,html').css({'height':'auto'});
         setTimeout(function(){
             $('.g_preloader').remove();
         },1500);

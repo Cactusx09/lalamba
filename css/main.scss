@@ -152,7 +152,7 @@ body,html{
     cursor: default;
 	font-weight: 400;
 	letter-spacing: -0.4px;
-	overflow: hidden;
+//	overflow-x: hidden;
 }
 
 /* ==========================================================
@@ -571,15 +571,17 @@ b{
 }
 
 .g_wrp{
-	height: 100vh;
+	height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
 	background-position: center;
-	overflow: hidden;
 	background-size: cover;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	position: relative;
+	position: fixed;
 	z-index: 0;
 	&:before{
 		content: '';
@@ -909,6 +911,7 @@ b{
             color: #fff;
             border-radius: 3px;
             margin-right: .5rem;
+            margin-bottom: .5rem;
             padding: 0.2rem 1rem;
             font-size: .9rem;
             min-width: 4rem;
@@ -3237,7 +3240,9 @@ b{
 			}
 		}
 		&_like{
-			width: auto;
+			width: 94%;
+            left: 3%;
+            max-width: 100%;
 		}
 		&_user,
 		&_login{
@@ -3294,6 +3299,7 @@ b{
             margin-left: auto;
             margin-right: auto;
             width: 100%;
+            font-size: .8rem;
         }
         &_login{
             &__share{
@@ -3302,7 +3308,6 @@ b{
             }
         }
         &_report,
-        &_like,
         &_upload{
             width: 100%;
             margin-left: 0 !important;
