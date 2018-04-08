@@ -697,6 +697,7 @@ $(document).ready(function(){
 
     if(getMobileOperatingSystem()!=null){
         $('.footer__volume').remove();
+        $('.footer__social').css({'padding-left':0});
     }
 });
 

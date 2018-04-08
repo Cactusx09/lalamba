@@ -2862,12 +2862,7 @@ b{
 		h1{
 			font-size: 38px;
 			small{
-				color: #fff;
-                transform: none;
-				opacity: 1;
-				border-bottom: 2px solid $g;
-				line-height: 0.8em;
-                right: -100px;
+				display: none;
 			}
 		}
         &__info{
@@ -3391,6 +3386,38 @@ b{
                 }
                 &:not(:last-of-type){
                     margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-height: 360px){
+    .s_text{
+        padding-top: 0;
+        h1{
+            font-size: 30px;
+            span{
+                font-size: 1rem;
+            }
+        }
+        &__info{
+            margin-bottom: 2px;
+        }
+    }
+    .s_btns{
+        a{
+            width: 39px;
+            height: 39px;
+        }
+    }
+    .menu{
+        &__body{
+            padding-top: 75px;
+        }
+        &__filter{
+            &_item{
+                &:not(:last-of-type){
+                    margin-bottom: .5rem;
                 }
             }
         }
