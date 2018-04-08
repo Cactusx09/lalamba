@@ -152,6 +152,7 @@ body,html{
     cursor: default;
 	font-weight: 400;
 	letter-spacing: -0.4px;
+    overflow: hidden;
 //	overflow-x: hidden;
 }
 
@@ -578,6 +579,7 @@ b{
 	background-position: center;
 	background-size: cover;
 	display: flex;
+    overflow: hidden;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
@@ -1199,6 +1201,7 @@ b{
 		display: none;
 		position: relative;
 		max-height: 0;
+
 		&._current{
 			display: block;
 		}
@@ -2567,6 +2570,26 @@ b{
 		overflow-y: auto;
         max-height: 60vh;
 		border-bottom: 1px solid #cfd8dc;
+        &::-webkit-scrollbar{
+            width: 11px;  /* for vertical scrollbars */
+            height: 11px; /* for horizontal scrollbars */
+            &-track{
+                background-color: #fff;
+                border-left: 1px solid rgba(155,169,188,0.2);
+            }
+            &-thumb{
+                background: $r;
+                border-left: 1px solid transparent;
+                border-left-color: #fff;
+                &:hover{
+                    background-color:  darken( $r,10);
+                    border-color: $r;
+                }
+                &:active{
+                    background-color: darken(#cfd8dc,20);
+                }
+            }
+        }
 		>*{
 			margin-bottom: 30px;
 		}
@@ -2663,6 +2686,26 @@ b{
 			}
 		}
 	}
+    &::-webkit-scrollbar{
+        width: 11px;  /* for vertical scrollbars */
+        height: 11px; /* for horizontal scrollbars */
+        &-track{
+            background-color: #fff;
+            border-left: 1px solid rgba(155,169,188,0.2);
+        }
+        &-thumb{
+            background: $r;
+            border-left: 1px solid transparent;
+            border-left-color: #fff;
+            &:hover{
+                background-color:  darken( $r,10);
+                border-color: $r;
+            }
+            &:active{
+                background-color: darken(#cfd8dc,20);
+            }
+        }
+    }
 }
 
 .play-button {
@@ -2717,6 +2760,10 @@ b{
 }
 .paused .triangle-2 {
 	transform: translate(0, 10px);
+}
+
+._scroll{
+    overflow: auto;
 }
 
 /* ==========================================================
@@ -3578,24 +3625,24 @@ progress[value]::-webkit-progress-value {
 }
 
 ::-webkit-scrollbar{
-	width: 9px;  /* for vertical scrollbars */
-	height: 9px; /* for horizontal scrollbars */
-	&-track{
-		background-color: #fdfdfd;
-		border-left: 1px solid #ddd;
-	}
-	&-thumb{
-		background: #cfd8dc;
-		border-left: 1px solid transparent;
-		border-left-color: $g;
-		&:hover{
-			background-color:  darken( #cfd8dc,10);
-			border-color: $r;
-		}
-		&:active{
-			background-color: darken(#cfd8dc,20);
-		}
-	}
+    width: 11px;  /* for vertical scrollbars */
+    height: 11px; /* for horizontal scrollbars */
+    &-track{
+        background-color: #242d39;
+        border-left: 1px solid rgba(72, 84, 101, 0.7);
+    }
+    &-thumb{
+        background: $r;
+        border-left: 1px solid transparent;
+        border-left-color: #fff;
+        &:hover{
+            background-color:  darken( $r,10);
+            border-color: $r;
+        }
+        &:active{
+            background-color: darken(#cfd8dc,20);
+        }
+    }
 }
 
 /* ==========================================================

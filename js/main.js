@@ -11,7 +11,6 @@ $(document).ready(function(){
 			b = $('.menu__bot').outerHeight(),
 			distance = $(window).outerHeight() - a - $('.menu__tabs').outerHeight() - b;
 		$('.menu__filter').css('max-height',distance+'px');
-		$('._scroll').perfectScrollbar('update');
 		if(!hamb.hasClass('_close')){
 			wrap.css('transform','translateX('+width+'px)');
 			btns.css('transform','translateX(-'+width+'px)');
@@ -38,7 +37,6 @@ $(document).ready(function(){
 			b = $('.menu__bot').offset().top,
 			distance = Math.abs(a - b)-30;
 		$('.menu__filter').css('max-height',distance+'px');
-		$('._scroll').perfectScrollbar('update');
 		playlist.removeClass('_active');
 		wrap.css('transform','none');
 		btns.css('transform','none');
@@ -326,15 +324,13 @@ $(document).ready(function(){
 		});
 	}
 
-	//custom scroll
-	$('._scroll').perfectScrollbar();
+
 	//menu tabs
 	$('.menu__tabs span').click(function(){
 		var el = $(this),
 			n = el.index();
 		el.addClass('_current').siblings().removeClass('_current');
 		el.closest('.menu').find('.menu__filter').removeClass('_current').eq(n).addClass('_current');
-		$('._scroll').perfectScrollbar('update');
 	});
 
 	//validate
@@ -548,7 +544,6 @@ $(document).ready(function(){
 			b = $('.menu__bot').offset().top,
 			distance = Math.abs(a - b)-30;
 		$('.menu__filter').css('max-height',distance+'px');
-		$('._scroll').perfectScrollbar('update');
 	});
 
 	//play/pause animation
@@ -576,7 +571,7 @@ $(document).ready(function(){
 	//rating open
 	$('.s_text__info_num').click(function(){
 		$('.rating').addClass('_active');
-		$('.rating__table_wrp').perfectScrollbar();
+//		$('.rating__table_wrp').perfectScrollbar();
 	});
 	//rating sorting
 	$('.rating__table').tablesorter({
@@ -595,7 +590,7 @@ $(document).ready(function(){
 	$('.menu__panel_playlist').click(function(){
 		$('.playlist').toggleClass('_active');
 		$('.rating').removeClass('_active');
-		$('.playlist__table_wrp').perfectScrollbar();
+//		$('.playlist__table_wrp').perfectScrollbar();
 	});
 	//playlist sorting
 	$('.playlist__table_my').tablesorter({
@@ -620,7 +615,7 @@ $(document).ready(function(){
 			n = el.index();
 		el.addClass('_current').siblings().removeClass('_current');
 		$('.playlist__table').eq(n).addClass('_current').siblings().removeClass('_current');
-        $('.playlist__table_wrp').perfectScrollbar('update');
+//        $('.playlist__table_wrp').perfectScrollbar('update');
 	});
 	//playlist remove track
 	$('.playlist__table .t_del').click(function(){
