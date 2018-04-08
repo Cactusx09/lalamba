@@ -3142,6 +3142,16 @@ b{
 				display: none;
 			}
 		}
+        &__tags{
+            a{
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                font-size: 3.0vw;
+                min-width: 0;
+            }
+        }
 	}
 	.s_btns{
 		a{
@@ -3368,6 +3378,23 @@ b{
         }
 	}
 
+}
+@media only screen and (max-width: 370.5px){
+    .s_text{
+        &__tags{
+            a{
+                font-size: 3.3vw;
+                background: none;
+                padding: 0;
+                &:before{
+                    content: '# ';
+                }
+                &:not(:last-of-type){
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
 }
 
 //@media only screen and (max-height: 600.5px){
