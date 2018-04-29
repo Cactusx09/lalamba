@@ -1487,11 +1487,9 @@ b{
 			display: table;
 		}
 		&_wrp{
-			max-height: calc(100% - 100px);
 			position: relative;
-			.ps-scrollbar-y-rail{
-				margin-top: 47px;
-			}
+            display: block;
+            overflow: auto;
 			.no-tracks{
 				text-align: center !important;
 			}
@@ -1625,7 +1623,7 @@ b{
 				}
 				.play-button{
 					position: absolute;
-					left: 2.27vw;
+					left: 1.5vw;
 					top: -1px;
 					transform: scale(0);
 					transition: $t;

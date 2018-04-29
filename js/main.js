@@ -571,7 +571,10 @@ $(document).ready(function(){
 	//rating open
 	$('.s_text__info_num').click(function(){
 		$('.rating').addClass('_active');
-//		$('.rating__table_wrp').perfectScrollbar();
+        var tbodyHeight = $(window).outerHeight() - $('.rating__head').outerHeight() - $('.rating__table thead').outerHeight() + 2;
+        $('.rating__table .playlist__table_wrp').css({
+            'max-height': tbodyHeight + 'px'
+        });
 	});
 	//rating sorting
 	$('.rating__table').tablesorter({
@@ -590,7 +593,10 @@ $(document).ready(function(){
 	$('.menu__panel_playlist').click(function(){
 		$('.playlist').toggleClass('_active');
 		$('.rating').removeClass('_active');
-//		$('.playlist__table_wrp').perfectScrollbar();
+        var tbodyHeight = $(window).outerHeight() - $('.playlist__head').outerHeight() - $('.playlist__table thead').outerHeight() + 2;
+        $('.playlist__table_wrp').css({
+            'max-height': tbodyHeight + 'px'
+        });
 	});
 	//playlist sorting
 	$('.playlist__table_my').tablesorter({
