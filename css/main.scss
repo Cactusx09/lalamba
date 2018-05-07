@@ -906,7 +906,6 @@ b{
     &__tags{
         display: flex;
         justify-content: flex-start;
-        flex-wrap: wrap;
         margin-top: 0.7em;
         a{
             background-color: rgba(72, 84, 101, 0.7);
@@ -1681,7 +1680,7 @@ b{
 				&._active{
 					path{
 						fill: $r;
-						stroke-width: 0.5px;
+						stroke-width: 1px;
 					}
 				}
 				svg{
@@ -1695,41 +1694,78 @@ b{
 						opacity: 1;
 					}
 				}
+                .t_action__shuffle{
+                    path{
+                        fill: #fff;
+                    }
+                }
 			}
+            .t_action{
+                position: relative;
+                &__shuffle{
+                    padding: 7px 10px;
+                    background-color: rgba($g, 0.1);
+                    border-radius: 3px;
+                    transition: $t;
+                    &_tooltip{
+                        position: absolute;
+                        bottom: 100%;
+                        white-space: nowrap;
+                        margin-bottom: 5px;
+                        font-size: 1rem;
+                        width: 100px;
+                        left: 50%;
+                        margin-left: -54px;
+                        transform: translateY(20px);
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: $t;
+                    }
+                    &._active{
+                        background-color: $r;
+                        g{
+                            fill: #fff;
+                        }
+                    }
+                }
+                &__edit{
+                    cursor: pointer;
+                    order: -1;
+                    margin-right: 10px;
+                }
+                &__del{
+                    cursor: pointer;
+                    &:hover{
+                        path{
+                            fill: $r;
+                            opacity: 1;
+                        }
+                    }
 
+                }
+            }
 			//my uploaded tracks
-			&.t_action{
+            &.t_action{
+                position: relative;
 				margin-left: auto;
 				margin-right: 1.4vw;
 				display: flex;
 				align-items: center;
 				min-width: 60px;
 				max-width: 60px;
-				.t_action{
-					&__shuffle{
-						padding-left: 11px;
-						&._active{
-							g{
-								fill: $r;
-								stroke-width: 0.5px;
-							}
-						}
-					}
-					&__edit{
-						cursor: pointer;
-						order: -1;
-						margin-right: 10px;
-					}
-					&__del{
-						cursor: pointer;
-						&:hover{
-							path{
-								fill: $r;
-								opacity: 1;
-							}
-						}
-					}
-				}
+                &:hover{
+                    .t_action{
+                        &__shuffle{
+                            &_tooltip{
+                                opacity: 1;
+                                transform: none;
+
+                                color: rgba(255, 255, 255, 0.5);
+                            }
+                        }
+                    }
+                }
+
 			}
 			&.t_expl{
 				min-width: 6%;
@@ -3421,17 +3457,29 @@ b{
 }
 @media only screen and (max-width: 370.5px){
     .s_text{
+        h1{
+            font-size: 9vw;
+            span{
+                font-size: 6vw;
+            }
+        }
         &__tags{
             a{
-                font-size: 3.3vw;
-                background: none;
-                padding: 0;
-                &:before{
-                    content: '# ';
+                font-size: 4.4vw;
+//                background: none;
+                padding-top: 3px;
+                padding-bottom: 3px;
+//                &:before{
+//                    content: '# ';
+//                }
+                small{
+                    display: none;
                 }
                 &:not(:last-of-type){
-                    margin-right: 10px;
+                    margin-right: 6px;
                 }
+                margin-right: 0;
+                color: rgba(255, 255, 255, 0.8);
             }
         }
     }
