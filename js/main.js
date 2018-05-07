@@ -572,8 +572,8 @@ $(document).ready(function(){
 	$('.s_text__info_num').click(function(){
 		$('.rating').addClass('_active');
         var tbodyHeight = $(window).outerHeight() - $('.rating__head').outerHeight() - $('.rating__table thead').outerHeight() + 2;
-        $('.rating__table .playlist__table_wrp').css({
-            'max-height': tbodyHeight + 'px'
+        $('.rating__table._current .playlist__table_wrp').css({
+            'height': tbodyHeight + 'px'
         });
 	});
 	//rating sorting
@@ -583,6 +583,10 @@ $(document).ready(function(){
 	//rating tabs
 	$('.rating__head a').click(function(){
 		$(this).addClass('_current').siblings().removeClass('_current');
+        var tbodyHeight = $(window).outerHeight() - $('.rating__head').outerHeight() - $('.rating__table thead').outerHeight() + 2;
+        $('.rating__table._current .playlist__table_wrp').css({
+            'height': tbodyHeight + 'px'
+        });
 	});
 	//rating close
 	$('.rating__close').click(function(){
@@ -595,7 +599,7 @@ $(document).ready(function(){
 		$('.rating').removeClass('_active');
         var tbodyHeight = $(window).outerHeight() - $('.playlist__head').outerHeight() - $('.playlist__table thead').outerHeight() + 2;
         $('.playlist__table_wrp').css({
-            'max-height': tbodyHeight + 'px'
+            'height': tbodyHeight + 'px'
         });
 	});
 	//playlist sorting
@@ -621,6 +625,11 @@ $(document).ready(function(){
 			n = el.index();
 		el.addClass('_current').siblings().removeClass('_current');
 		$('.playlist__table').eq(n).addClass('_current').siblings().removeClass('_current');
+
+        var tbodyHeight = $(window).outerHeight() - $('.playlist__head').outerHeight() - $('.playlist__table._current thead').outerHeight() + 2;
+        $('.playlist__table_wrp').css({
+            'height': tbodyHeight + 'px'
+        });
 //        $('.playlist__table_wrp').perfectScrollbar('update');
 	});
 	//playlist remove track
