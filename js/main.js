@@ -26,6 +26,30 @@ $(document).ready(function(){
 		e.stopPropagation();
 	});
 
+  $('.s_text__tags a').click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var hamb = $('header__hamb'),
+        wrap = $('.main_wrp'),
+        btns = $('.s_btns'),
+        menu = $('.menu'),
+        playlist = $('.playlist'),
+        width = menu.outerWidth(),
+        a = $('.menu__tabs').offset().top,
+        b = $('.menu__bot').outerHeight(),
+        distance = $(window).outerHeight() - a - $('.menu__tabs').outerHeight() - b;
+    $('.menu__filter').css('max-height',distance+'px');
+    playlist.removeClass('_active');
+    wrap.css('transform','none');
+    btns.css('transform','none');
+    hamb.addClass('_close');
+    menu.addClass('_active');
+
+
+    var n = $(this).index();
+    $('.menu__tabs_item').eq(n).trigger('click');
+  });
+
 	$(window).click(function(){
 		var hamb = $('.header__hamb'),
 			wrap = $('.main_wrp'),
