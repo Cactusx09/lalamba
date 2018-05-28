@@ -857,26 +857,22 @@ b{
 			padding: 4px 19px;
 			position: relative;
 			cursor: pointer;
-			&:before{
-				content: '';
-				position: absolute;
-				width: 3px;
-				height: 100%;
-				border-radius: 3px;
-				background-color: $g;
-				left: 0;
-				top: 0;
-			}
-			&:after{
-				content: '';
-				position: absolute;
-				width: 3px;
-				height: 100%;
-				border-radius: 3px;
-				background-color: $r;
-				right: 0;
-				top: 0;
-			}
+      &Left{
+        position: absolute;
+        width: 3px;
+        height: 100%;
+        border-radius: 3px;
+        left: 0;
+        top: 0;
+      }
+      &Right{
+        position: absolute;
+        width: 3px;
+        height: 100%;
+        border-radius: 3px;
+        right: 0;
+        top: 0;
+      }
 			&:hover{
 				.s_text__info_tooltip{
 					opacity: 1;
