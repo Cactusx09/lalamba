@@ -29,7 +29,7 @@ $(document).ready(function(){
   $('.s_text__tags a').click(function(e){
     e.preventDefault();
     e.stopPropagation();
-    var hamb = $('header__hamb'),
+    var hamb = $('.header__hamb'),
         wrap = $('.main_wrp'),
         btns = $('.s_btns'),
         menu = $('.menu'),
@@ -45,6 +45,8 @@ $(document).ready(function(){
     hamb.addClass('_close');
     menu.addClass('_active');
 
+    wrap.css('transform','translateX('+width+'px)');
+    btns.css('transform','translateX(-'+width+'px)');
 
     var n = $(this).index();
     $('.menu__tabs_item').eq(n).trigger('click');
