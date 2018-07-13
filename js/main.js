@@ -141,6 +141,16 @@ $(document).ready(function(){
 			'margin-left': '-'+ popup_w/2 +'px'
 		});
 		$('.popup.popup_'+name+', .overlay').addClass('_visible');
+
+    //fileds height recalculate
+    if(getMobileOperatingSystem()!=null){
+      var sumPx = $('.popup_login__head').outerHeight() + $('.popup_login__tab._current .popup_login__options').outerHeight() + $('.popup_login__tab._current .popup__bot').outerHeight();
+      var fieldsHeight = $(window).outerHeight() - sumPx;
+      console.log(fieldsHeight);
+      $('.popup__fields').css({
+        'maxHeight':  fieldsHeight + 'px'
+      });
+    }
 	});
 	//popup tabs
 	$('.popup_user__head_item').click(function(){
@@ -199,6 +209,7 @@ $(document).ready(function(){
 			if(tab=="register"){
 				$('.popup_login__head_item').eq(1).trigger('click');
 			}else{
+        //register click
 				$('.popup_login__head_item').eq(0).trigger('click');
 			}
 			var name = 'login',
@@ -215,6 +226,9 @@ $(document).ready(function(){
 		if(name=="ua"){
 			$(this).closest('.popup').removeClass('_visible');
 		}
+    if(name=="login"){
+
+    }
 		$('.popup.popup_'+name+' .popup__fields').scrollTop(0);
 	});
 	$('.overlay').click(function(e){

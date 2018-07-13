@@ -659,6 +659,8 @@ b{
 		user-select: none;
 		transition: transform $t;
 		pointer-events: all;
+    padding-left: 15px;
+    margin-left: -15px;
 		&:not(._close):hover{
 			span{
 				&:nth-of-type(2){
@@ -3095,8 +3097,9 @@ b{
 			left: 0 !important;
 			top: 0 !important;
 			overflow: hidden;
-			height: 100vh;
+			height: 100%;
 			border-radius: 0;
+      position: fixed;
 			&__txt{
 				max-height: calc(100vh  -  75px);
 			}
@@ -3110,9 +3113,15 @@ b{
 		&_login{
 			overflow-y: auto;
 			font-size: 17px;
+      &__options{
+          padding: 15px 24px 11px;
+      }
 			&__head{
 				&_item{
-					padding-top: 0;
+          height: 45px;
+					padding-bottom: 3px;
+          font-size: .9em;
+          letter-spacing: 1px;
 					margin-top: 33px;
 					border-top: 1px solid rgba(155,169,188,0.33);
 				}
@@ -3128,7 +3137,14 @@ b{
 		}
 		&__btn{
 			align-self: stretch;
+      height: 42px;
 		}
+    &__bot{
+      padding: 13px 50px;
+    }
+    &__fields{
+      padding: 24px 20px 5px;
+    }
 	}
 	.playlist{
 		&__head{
@@ -3455,7 +3471,7 @@ b{
 @media only screen and (max-width: 370.5px){
     .s_text{
         h1{
-            font-size: 9vw;
+            font-size: 12vw;
             span{
                 font-size: 6vw;
             }
