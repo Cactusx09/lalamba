@@ -760,6 +760,7 @@ $(document).ready(function(){
   //swipe
   var doc = $(document)[0];
   var swipeArea = new Hammer(doc);
+  swipeArea.get('pan').set({threshold: 120})
   swipeArea.on('panleft panright', function(ev){
     var hamb = $('.header__hamb'),
         wrap = $('.main_wrp'),
