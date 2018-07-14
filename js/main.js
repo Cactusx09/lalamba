@@ -147,7 +147,7 @@ $(document).ready(function(){
       var sumPx = $('.popup_login__head').outerHeight() + $('.popup_login__tab._current .popup_login__options').outerHeight() + $('.popup_login__tab._current .popup__bot').outerHeight();
       var fieldsHeight = $(window).outerHeight() - sumPx;
       console.log(fieldsHeight);
-      $('.popup__fields').css({
+      $('.popup_login .popup__fields').css({
         'maxHeight':  fieldsHeight + 'px'
       });
     }
@@ -226,8 +226,14 @@ $(document).ready(function(){
 		if(name=="ua"){
 			$(this).closest('.popup').removeClass('_visible');
 		}
-    if(name=="login"){
-
+    if(name=="upload" && getMobileOperatingSystem()!=null){
+      //fileds height recalculate
+      var sumPx = $('.popup_upload__head').outerHeight() + $('.popup_upload  .popup__bot').outerHeight();
+      var fieldsHeight = $(window).outerHeight() - sumPx;
+      console.log(fieldsHeight);
+      $('.popup_upload .popup__fields').css({
+        'maxHeight':  fieldsHeight + 'px'
+      });
     }
 		$('.popup.popup_'+name+' .popup__fields').scrollTop(0);
 	});
