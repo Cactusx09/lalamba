@@ -755,6 +755,35 @@ $(document).ready(function(){
         $('.footer__volume').remove();
         $('.footer__social').css({'padding-left':0});
     }
+
+
+  //swipe
+  var doc = $(document)[0];
+  var swipeArea = new Hammer(doc);
+  swipeArea.on('panleft panright', function(ev){
+    var hamb = $('.header__hamb'),
+        wrap = $('.main_wrp'),
+        btns = $('.s_btns'),
+        menu = $('.menu'),
+        playlist = $('.playlist'),
+        width = menu.outerWidth(),
+        a = $('.menu__tabs').offset().top,
+        b = $('.menu__bot').outerHeight(),
+        distance = $(window).outerHeight() - a - $('.menu__tabs').outerHeight() - b;
+    $('.menu__filter').css('max-height',distance+'px');
+    if(ev.type == "panright"){
+      wrap.css('transform','translateX('+width+'px)');
+      btns.css('transform','translateX(-'+width+'px)');
+      hamb.addClass('_close');
+      menu.addClass('_active');
+    }else{
+      playlist.removeClass('_active');
+      wrap.css('transform','none');
+      btns.css('transform','none');
+      hamb.removeClass('_close');
+      menu.removeClass('_active');
+    }
+  });
 });
 
 //mobile hover disable
@@ -810,6 +839,8 @@ window.addEventListener ?
     window.addEventListener("load",preloader,false)
 :
 window.attachEvent && window.attachEvent("onload",preloader);
+
+
 
 
 //var path = document.getElementsByClassName('.g_wrp').getAttribute("style");
